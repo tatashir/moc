@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>データ追加登録</title>
+    <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
+    <link rel="stylesheet" href=".//upsystem.css" />
+    <style>
+      /* ナビゲーション部分のスタイル */
+      .contact__flow-area {
+        margin: 40px auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contact__flow-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: calc(100% / 3); */
+        width: calc(100% / 4);
+        height: 60px;
+        position: relative;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .contact__flow-area .box01 {
+        background: #fff;
+      }
+
+      .contact__flow-area .box02 {
+        background: #fff;
+        color: #000;
+      }
+
+      .contact__flow-area .box03 {
+        background: #fff;
+        color: #000;
+      }
+
+      .contact__flow-area .box04 {
+        background: rgb(187, 221, 255);
+        color: #000;
+      }
+
+      .contact__flow-area .box02:before,
+      .contact__flow-area .box02:after,
+      .contact__flow-area .box03:before,
+      .contact__flow-area .box03:after,
+      .contact__flow-area .box04:before {
+        border-left: 20px solid #ffffff;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .contact__flow-area .box02:before {
+        border-left-color: #b4b4b4;
+        left: 0;
+        top: -1px;
+        z-index: 1;
+      }
+
+      .contact__flow-area .box02:after {
+        border-left-color: #fff;
+        left: -1px;
+        top: -1px;
+        z-index: 2;
+      }
+
+      .contact__flow-area .box03::before {
+        border-left-color: #b4b4b4;
+        left: 0;
+        top: -1px;
+        z-index: 1;
+      }
+
+      .contact__flow-area .box03:after {
+        border-left-color: #fff;
+        left: -1px;
+        top: -1px;
+        z-index: 2;
+      }
+
+      .contact__flow-area .box04::before {
+        border-left-color: #fff;
+        left: 0;
+        top: -1px;
+        z-index: 1;
+      }
+
+      .contact__title-number {
+        margin-bottom: 6px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="logo vertical-center">
+              <h1>技術資料等アップロードシステム</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tools vertical-right">
+              <input class="btn" type="button" name="" value="閉じる" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container" layout:fragment="contents" style="width: 800px">
+      <div class="screen-title">
+        <div class="row">
+          <div class="col-12">
+            <h1>データ追加登録</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-area">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="form-table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>aaaaaa</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td>
+                  <a href="#">aaaaa</a>
+                </td>
+              </tr>
+              <tr>
+                <th>対象申請書種別</th>
+                <td>testtesttesttest</td>
+              </tr>
+              <tr>
+                <th>対象資料種別</th>
+                <td>testtesttesttest</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <main class="main">
+        <div class="container">
+          <div class="contact__flow-area">
+            <div class="box01 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP1</span>
+              </div>
+            </div>
+            <div class="box02 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP2</span>
+              </div>
+            </div>
+            <div class="box03 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP3</span>
+              </div>
+            </div>
+            <div class="box04 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP4</span>
+              </div>
+            </div>
+          </div>
+
+          <h2>入力した情報の確認・印刷</h2>
+          <section style="margin: 20px 0; text-align: center">
+            <h2>入力内容の確認</h2>
+            <p>
+              以下の内容を確認し、印刷する場合は「印刷」ボタンをクリックしてください。
+            </p>
+            <a
+              class="btn"
+              style="
+                text-decoration: none;
+                margin: 10px auto;
+                display: inline-block;
+              "
+            >
+              印刷
+            </a>
+            <a
+              href="confirm.html"
+              class="btn"
+              style="
+                text-decoration: none;
+                margin: 10px auto;
+                display: inline-block;
+              "
+            >
+              確認
+            </a>
+          </section>
+          <div
+            class="text-center"
+            style="
+              margin: 20px 0;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="step3.html"
+              class="btn"
+              style="text-decoration: none; margin: 10px"
+              >戻る</a
+            >
+            <div style="display: flex; gap: 10px; margin: 10px">
+              <a class="btn" style="text-decoration: none">提出</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

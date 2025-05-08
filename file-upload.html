@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html
+  lang="ja"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/UC01_AccLayout}"
+>
+  <head>
+    <title>データ追加登録</title>
+    <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
+    <link rel="stylesheet" href=".//upsystem.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="logo vertical-center">
+              <h1>技術資料等アップロードシステム</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tools vertical-right">
+              <input class="btn" type="button" name="" value="閉じる" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container" layout:fragment="contents" style="width: 800px">
+      <div class="screen-title">
+        <div class="row">
+          <div class="col-12">
+            <h2>データ追加登録</h2>
+          </div>
+        </div>
+      </div>
+      <!-- screen-title -->
+
+      <div class="top-area">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="form-table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>aaaaaa</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td>
+                  <a href="#">aaaaa</a>
+                </td>
+              </tr>
+              <tr>
+                <th>対象申請書種別</th>
+                <td>testtesttesttest</td>
+              </tr>
+              <tr>
+                <th>対象資料種別</th>
+                <td>testtesttesttest</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- top-area -->
+
+      <div class="middle-area">
+        <div class="row justify-content-sm-center">
+          <div class="col-md-8 align-left alert-message">
+            <p
+              class="indentback"
+              th:text="'※全' + ${baseinfo.registerableFileCnt} + 'ファイル、合計' + ${baseinfo.registerableFileSize} + 'MBまで提出可能です(提出済みファイルを含む)。'"
+            ></p>
+            <p class="indentback">
+              ※ファイルはウイルスチェックを最新版のチェックデータで行ってください。<br />
+            </p>
+          </div>
+        </div>
+
+        <div th:if="${message != null}" class="error" id="message">
+          <ul>
+            <li th:if="${message.message != null}" th:text="${message.message}">
+              あああああああああああああああああああああああああああああ
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- middle-area -->
+
+      <div class="bottom-area">
+        <div class="attach-doc-form">
+          <form
+            role="form"
+            name="postForm"
+            th:action="@{'/attachmentFiles/save'}"
+            enctype="multipart/form-data"
+            method="post"
+            th:object="${inForm}"
+          >
+            <div class="row list-controll">
+              <div class="col-12 align-right">
+                <div class="controll-message">
+                  <div id="sumFileSize"></div>
+                </div>
+                <div>
+                  <input type="hidden" name="attachedDocumentNo" value="" />
+                  <input type="hidden" name="fileName" value="" />
+                </div>
+              </div>
+            </div>
+            <!-- list-controll -->
+
+            <div class="row result-list">
+              <!-- 提出済み添付ファイル数が提出可能ファイル数以上の場合：すべて提出済み添付ファイルを表示
+                 提出済み添付ファイル数が提出可能ファイル数未満の場合：アップロードファイル選択行あり
+                   として行数を設定 -->
+              <div
+                class="col-12"
+                th:with="rowCnt=${baseinfo.registerableFileCnt <= #lists.size(filesinfo)} ?
+                           ${#lists.size(filesinfo)} : ${baseinfo.registerableFileCnt}"
+              >
+                <table>
+                  <tr>
+                    <th width="5%">No.</th>
+                    <th width="75%">添付ファイル選択</th>
+                    <th width="10%">サイズ</th>
+                    <th width="10%"></th>
+                  </tr>
+
+                  <!-- 上記で設定した行数分ループ -->
+                  <tr
+                    th:each="i : ${#numbers.sequence(0, rowCnt-1)}"
+                    th:value="${i}"
+                  >
+                    <td class="align-center" th:text="${i}+1"></td>
+                    <td class="align-left">
+                      <!-- 提出済み添付ファイルを表示する場合 -->
+                      <div
+                        th:if="${#lists.size(filesinfo)} > ${i}"
+                        th:text="${filesinfo[i].fileName}"
+                        th:id="'fileName'+${i}"
+                      ></div>
+                      <!-- アップロードファイル選択を表示する場合 -->
+                      <input
+                        th:if="${#lists.size(filesinfo)} <= ${i}"
+                        type="file"
+                        name="filesList"
+                        th:id="'selectFileName'+${i}"
+                        size="40"
+                        th:onChange="'selectFile(this.files,'+${i}+')'"
+                        th:onclick="this.blur()"
+                      />
+                    </td>
+                    <td class="align-right">
+                      <div th:id="'fileSize' + ${i}"></div>
+                    </td>
+                    <td class="align-center">
+                      <!-- 提出済み添付ファイルの場合の「削除」ボタン -->
+                      <input
+                        th:id="'deleteButton' + ${i}"
+                        th:if="${#lists.size(filesinfo)} > ${i}"
+                        type="button"
+                        class="btn"
+                        name=""
+                        value="削除"
+                        th:onclick="'deleteFile('+${i}+')'"
+                      />
+                      <!-- アップロードファイル選択の場合の「削除」ボタン -->
+                      <input
+                        th:id="'clearButton' + ${i}"
+                        th:if="${#lists.size(filesinfo)} <= ${i}"
+                        type="button"
+                        class="btn"
+                        name=""
+                      />
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 align-center">
+                <input
+                  type="button"
+                  name=""
+                  value="提出"
+                  class="btn"
+                  th:onClick="'saveFiles()'"
+                />
+                <input
+                  type="button"
+                  id="returnbtn"
+                  name=""
+                  value="戻る"
+                  class="btn"
+                  th:onClick="'location.href=\'' + @{'/attachmentFiles'} + '\''"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- result-list -->
+      </div>
+      <!-- bottom-area -->
+    </div>
+  </body>
+</html>

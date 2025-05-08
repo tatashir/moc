@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>基本情報入力画面</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
+    <link rel="stylesheet" href=".//upsystem.css" />
+    <link rel="stylesheet" href=".//style.css" />
+    <script>
+      function showStep(step) {
+        const steps = document.querySelectorAll(".step");
+        steps.forEach((s, index) => {
+          s.classList.toggle("active", index === step);
+        });
+
+        const buttons = document.querySelectorAll(".sidebar button");
+        buttons.forEach((b, index) => {
+          b.classList.toggle("active", index === step);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li><button class="active" onclick="showStep(0)">ステップ1</button></li>
+        <li><button onclick="showStep(1)">ステップ2</button></li>
+        <li><button onclick="showStep(2)">ステップ3</button></li>
+        <li><button onclick="showStep(3)">ステップ4</button></li>
+      </ul>
+      <div>
+        <button class="btn" onclick="window.close();">閉じる</button>
+      </div>
+    </div>
+    <div class="content">
+      <header class="header">
+        <h1>技術資料等アップロードシステム</h1>
+      </header>
+      <div class="step active">
+        <h2>基本情報の入力</h2>
+        <form>
+          <table class="form-table">
+            <tr>
+              <th>調達案件名称</th>
+              <td><input type="text" name="procurement_name" required /></td>
+            </tr>
+            <tr>
+              <th>工種区分</th>
+              <td><input type="text" name="work_type" required /></td>
+            </tr>
+            <tr>
+              <th>企業体名称</th>
+              <td><input type="text" name="entity_name" required /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="step">
+        <h2>ステップ2: 会社情報</h2>
+        <form>
+          <table class="form-table">
+            <tr>
+              <th>建設業許可番号</th>
+              <td>
+                <input
+                  type="text"
+                  name="license_number"
+                  pattern="\d{6}"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>企業ID</th>
+              <td><input type="text" name="company_id" required /></td>
+            </tr>
+            <tr>
+              <th>企業名称</th>
+              <td><input type="text" name="company_name" required /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="step">
+        <h2>ステップ3: その他情報</h2>
+        <form>
+          <table class="form-table">
+            <tr>
+              <th>代表電話番号</th>
+              <td><input type="tel" name="phone_number" required /></td>
+            </tr>
+            <tr>
+              <th>代表FAX番号</th>
+              <td><input type="tel" name="fax_number" required /></td>
+            </tr>
+            <tr>
+              <th>代表者氏名</th>
+              <td><input type="text" name="representative_name" required /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="step">
+        <h2>ステップ4: 確認と送信</h2>
+        <form>
+          <p>入力内容を確認してください。</p>
+          <button class="btn">送信</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

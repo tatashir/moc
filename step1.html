@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>データ追加登録</title>
+    <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
+    <link rel="stylesheet" href=".//upsystem.css" />
+    <style>
+      /* ナビゲーション部分のスタイル */
+      .contact__flow-area {
+        margin: 40px auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contact__flow-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: calc(100% / 3); */
+        width: calc(100% / 4);
+        height: 60px;
+        position: relative;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .contact__flow-area .box01 {
+        background: rgb(187, 221, 255);
+      }
+
+      .contact__flow-area .box02 {
+        background: #fff;
+        color: #000;
+      }
+
+      .contact__flow-area .box03 {
+        background: #fff;
+        color: #000;
+      }
+
+      .contact__flow-area .box04 {
+        background: #fff;
+        color: #000;
+      }
+
+      .contact__flow-area .box02:before,
+      .contact__flow-area .box03:before,
+      .contact__flow-area .box03:after,
+      .contact__flow-area .box04:before,
+      .contact__flow-area .box04:after {
+        border-left: 20px solid #ffffff;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .contact__flow-area .box02:before {
+        border-left-color: rgb(187, 221, 255);
+      }
+
+      .contact__flow-area .box02:after {
+        border-left-color: #fff;
+        left: -1px;
+        top: -1px;
+        z-index: 2;
+      }
+
+      .contact__flow-area .box03::before {
+        border-left-color: #b4b4b4;
+        left: 0;
+        top: -1px;
+        z-index: 1;
+      }
+
+      .contact__flow-area .box03:after {
+        border-left-color: #fff;
+        left: -1px;
+        top: -1px;
+        z-index: 2;
+      }
+
+      .contact__flow-area .box04::before {
+        border-left-color: #b4b4b4;
+        left: 0;
+        top: -1px;
+        z-index: 1;
+      }
+
+      .contact__flow-area .box04:after {
+        border-left-color: #fff;
+        left: -1px;
+        top: -1px;
+        z-index: 2;
+      }
+
+      .contact__title-number {
+        margin-bottom: 6px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="logo vertical-center">
+              <h1>技術資料等アップロードシステム</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tools vertical-right">
+              <input class="btn" type="button" name="" value="閉じる" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container" layout:fragment="contents" style="width: 800px">
+      <div class="screen-title">
+        <div class="row">
+          <div class="col-12">
+            <h1>データ追加登録</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-area">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="form-table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>aaaaaa</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td>
+                  <a href="#">aaaaa</a>
+                </td>
+              </tr>
+              <tr>
+                <th>対象申請書種別</th>
+                <td>testtesttesttest</td>
+              </tr>
+              <tr>
+                <th>対象資料種別</th>
+                <td>testtesttesttest</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <main class="main">
+        <div class="container">
+          <div class="contact__flow-area">
+            <div class="box01 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP1</span>
+              </div>
+            </div>
+            <div class="box02 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP2</span>
+              </div>
+            </div>
+            <div class="box03 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP3</span>
+              </div>
+            </div>
+            <div class="box04 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP4</span>
+              </div>
+            </div>
+          </div>
+
+          <h2>基本情報の入力</h2>
+          <section>
+            <h2 style="text-align: left">技術資料入力条件の設定</h2>
+            <form>
+              <table class="form-table">
+                <tr>
+                  <th>調達案件名称</th>
+                  <td>
+                    <input type="text" name="procurement_name" required />
+                  </td>
+                </tr>
+                <tr>
+                  <th>工種区分</th>
+                  <td><input type="text" name="work_type" required /></td>
+                </tr>
+                <tr>
+                  <th>企業体名称</th>
+                  <td><input type="text" name="entity_name" required /></td>
+                </tr>
+                <tr>
+                  <th>対象工事への参加区分</th>
+                  <td>
+                    <select name="participation_type">
+                      <option value="single">単体企業</option>
+                      <option value="joint">共同企業体</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>事務所名</th>
+                  <td><input type="text" name="office_name" required /></td>
+                </tr>
+                <tr>
+                  <th>同種工事の条件</th>
+                  <td>
+                    <textarea
+                      name="similar_work_conditions"
+                      required
+                    ></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <th>企業能力評価型</th>
+                  <td><input type="checkbox" name="evaluation_type" /></td>
+                </tr>
+              </table>
+            </form>
+          </section>
+
+          <section>
+            <h2 style="text-align: left">会社情報</h2>
+            <form>
+              <table class="form-table">
+                <tr>
+                  <th>建設業許可番号</th>
+                  <td>
+                    <input
+                      type="text"
+                      name="license_number"
+                      pattern="\d{6}"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>企業ID</th>
+                  <td><input type="text" name="company_id" required /></td>
+                </tr>
+                <tr>
+                  <th>企業名称</th>
+                  <td><input type="text" name="company_name" required /></td>
+                </tr>
+                <tr>
+                  <th>企業郵便番号</th>
+                  <td><input type="text" name="postal_code" required /></td>
+                </tr>
+                <tr>
+                  <th>企業住所</th>
+                  <td><input type="text" name="address" required /></td>
+                </tr>
+                <tr>
+                  <th>代表電話番号</th>
+                  <td><input type="tel" name="phone_number" required /></td>
+                </tr>
+                <tr>
+                  <th>代表FAX番号</th>
+                  <td><input type="tel" name="fax_number" required /></td>
+                </tr>
+                <tr>
+                  <th>代表者（ICカード取得者氏名）</th>
+                  <td>
+                    <input type="text" name="representative_name" required />
+                  </td>
+                </tr>
+                <tr>
+                  <th>作成者（連絡先氏名）</th>
+                  <td><input type="text" name="creator_name" required /></td>
+                </tr>
+                <tr>
+                  <th>予算決算及び会計令第70条への該当</th>
+                  <td>
+                    <input type="checkbox" name="budget_compliance" required />
+                  </td>
+                </tr>
+                <tr>
+                  <th>建設業退職金共済契約締結の有無</th>
+                  <td>
+                    <select name="retirement_contract" required>
+                      <option value="yes">有</option>
+                      <option value="no">無</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>同等の組合との締結の<br />場合は組合名記述</th>
+                  <td><input type="text" name="other_union_name" /></td>
+                </tr>
+              </table>
+            </form>
+          </section>
+          <div
+            class="text-center"
+            style="
+              margin: 40px 0 20px 0;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <a class="btn" style="text-decoration: none">戻る</a>
+            <a class="btn" style="text-decoration: none">一時保存 </a>
+            <a href="step2.html" class="btn" style="text-decoration: none"
+              >次へ</a
+            >
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>データ追加登録確認画面</title>
+    <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
+    <link rel="stylesheet" href=".//upsystem.css" />
+    <style>
+      .form-table th {
+        text-align: left;
+        padding: 8px;
+        background-color: #f9f9f9;
+      }
+
+      .form-table td {
+        padding: 8px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .btn {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="logo vertical-center">
+              <h1>技術資料等アップロードシステム</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tools vertical-right">
+              <input class="btn" type="button" name="" value="閉じる" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container" style="width: 800px">
+      <div class="screen-title">
+        <div class="row">
+          <div class="col-12">
+            <h1>データ追加登録確認画面</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-area">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="form-table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>123456</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td>サンプル案件</td>
+              </tr>
+              <tr>
+                <th>対象申請書種別</th>
+                <td>申請書A</td>
+              </tr>
+              <tr>
+                <th>対象資料種別</th>
+                <td>資料B</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- middle-area --><!-- 2023.03.31 R04年度改良_技術資料等アップロードシステムの使用方法補助表示 add start -->
+      <tr align="center">
+        <td align="left">
+          <span class="indentback red bold">
+            ※現時点では申請書の提出は完了していません。<br />　電子入札システムに戻り、申請書の提出を必ず実施してください。 </span
+          ><br />
+          ※全てのデータを登録後、登録済みデータ覧で登録結果を確認し、<br />　電子入札システムの申請書提出時に添付して下さい。
+          <br /><br />
+        </td>
+      </tr>
+
+      <main class="main">
+        <div class="container">
+          <h2>基本情報の確認</h2>
+          <section>
+            <h2 style="text-align: left">技術資料入力条件の確認</h2>
+            <table class="form-table">
+              <tr>
+                <th>調達案件名称</th>
+                <td>サンプル案件</td>
+              </tr>
+              <tr>
+                <th>工種区分</th>
+                <td>建築工事</td>
+              </tr>
+              <tr>
+                <th>企業体名称</th>
+                <td>サンプル企業体</td>
+              </tr>
+              <tr>
+                <th>対象工事への参加区分</th>
+                <td>単体企業</td>
+              </tr>
+              <tr>
+                <th>事務所名</th>
+                <td>東京事務所</td>
+              </tr>
+              <tr>
+                <th>同種工事の条件</th>
+                <td>条件A, 条件B</td>
+              </tr>
+              <tr>
+                <th>企業能力評価型</th>
+                <td>✔</td>
+              </tr>
+            </table>
+          </section>
+
+          <section style="margin-top: 20px">
+            <h2 style="text-align: left">会社情報の確認</h2>
+            <table class="form-table">
+              <tr>
+                <th>建設業許可番号</th>
+                <td>654321</td>
+              </tr>
+              <tr>
+                <th>企業ID</th>
+                <td>COMP123</td>
+              </tr>
+              <tr>
+                <th>企業名称</th>
+                <td>サンプル株式会社</td>
+              </tr>
+              <tr>
+                <th>企業郵便番号</th>
+                <td>123-4567</td>
+              </tr>
+              <tr>
+                <th>企業住所</th>
+                <td>東京都千代田区1-1-1</td>
+              </tr>
+              <tr>
+                <th>代表電話番号</th>
+                <td>03-1234-5678</td>
+              </tr>
+              <tr>
+                <th>代表FAX番号</th>
+                <td>03-8765-4321</td>
+              </tr>
+              <tr>
+                <th>代表者</th>
+                <td>山田 太郎</td>
+              </tr>
+              <tr>
+                <th>作成者</th>
+                <td>佐藤 花子</td>
+              </tr>
+              <tr>
+                <th>予算決算及び会計令<br />第70条への該当</th>
+                <td>✔</td>
+              </tr>
+              <tr>
+                <th>建設業退職金共済<br />契約締結の有無</th>
+                <td>有</td>
+              </tr>
+              <tr>
+                <th>同等の組合との締結の<br />場合は組合名記述</th>
+                <td>サンプル組合</td>
+              </tr>
+            </table>
+          </section>
+
+          <div class="text-center" style="margin: 20px 0">
+            <button class="btn">戻る</button>
+            <button class="btn">確定</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

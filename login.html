@@ -1,0 +1,124 @@
+<html lang="ja">
+  <head>
+    <title>ログイン</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" type="text/css" href="./bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="./bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="./upsystem.css" />
+    <script src="/CALS/Order/js/common.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="logo vertical-center">
+              <h1>技術資料等アップロードシステム</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tools vertical-right">
+              <input
+                class="btn"
+                type="button"
+                name=""
+                value="閉じる"
+                onclick="window.close();"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="screen-title">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>ログイン</h2>
+              <p>
+                ユーザIDとパスワードを入力後、ログインボタンを押下してください。
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- screen-title -->
+
+        <div class="bottom-area">
+          <form id="login_form" method="post" action="menu.html">
+            <input
+              type="hidden"
+              name="_csrf"
+              value="9eb23ff5-b4e2-491b-a46e-4e9da01c3ed8"
+            />
+            <div class="row justify-content-center">
+              <div class="col-lg-5 login-form">
+                <table class="form-table">
+                  <tbody>
+                    <tr>
+                      <th>ユーザID</th>
+                      <td>
+                        <input type="text" name="user_id" maxlength="120" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>パスワード</th>
+                      <td>
+                        <input
+                          type="password"
+                          name="password"
+                          maxlength="120"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <input
+                  type="submit"
+                  id="loginButton"
+                  class="btn"
+                  value="ログイン"
+                />
+              </div>
+            </div>
+          </form>
+
+          <div class="row justify-content-center information">
+            <div class="col-lg-6 align-left">
+              <hr />
+              <p class="bold">お知らせ</p>
+              <textarea readonly="readonly"></textarea>
+              <p class="bold">【資料】</p>
+              <ul>
+                <li>
+                  <a
+                    href="https://ebwww.midmlit.local/pdf/sousa/kouji/upload/upsousa_h.pdf"
+                    target="_blank"
+                    >技術資料等アップロードシステム_操作マニュアル（発注者側）</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://ebwww.midmlit.local/pdf/sousa/kouji/upload/upsousa_j.pdf"
+                    target="_blank"
+                    >技術資料等アップロードシステム_操作マニュアル（受注者側）</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
