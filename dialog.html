@@ -312,30 +312,34 @@
     </div>
 
     <script>
+      function openPopup(url, name) {
+        const screenWidth = window.innerWidth; // 親ウィンドウの幅
+        const screenHeight = window.innerHeight; // 親ウィンドウの高さ
+        const screenX = window.screenX; // 親ウィンドウのX座標
+        const screenY = window.screenY; // 親ウィンドウのY座標
+        window.open(
+          url, // 開くウィンドウのURL
+          name, // ウィンドウ名
+          `width=${screenWidth},height=${screenHeight},left=${screenX},top=${screenY}` // 親ウィンドウと同じサイズ・位置
+        );
+      }
+
       document
         .getElementById("openWindow1")
         .addEventListener("click", function () {
-          const screenWidth = window.innerWidth; // 親ウィンドウの幅
-          const screenHeight = window.innerHeight; // 親ウィンドウの高さ
-          const screenX = window.screenX; // 親ウィンドウのX座標
-          const screenY = window.screenY; // 親ウィンドウのY座標
-          window.open(
-            "child1.html", // 開くウィンドウのURL
-            "資格", // ウィンドウ名
-            `width=${screenWidth},height=${screenHeight},left=${screenX},top=${screenY}` // 親ウィンドウと同じサイズ・位置
-          );
+          openPopup("child1.html", "資格");
         });
 
       document
         .getElementById("openWindow2")
         .addEventListener("click", function () {
-          window.open("child2.html", "工事経験", "width=800,height=600");
+          openPopup("child2.html", "工事経験");
         });
 
       document
         .getElementById("openWindow3")
         .addEventListener("click", function () {
-          window.open("child3.html", "従事状況", "width=800,height=600");
+          openPopup("child3.html", "従事状況");
         });
 
       // 子ウィンドウからデータを受け取る関数
