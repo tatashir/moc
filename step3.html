@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>データ追加登録</title>
-    <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
-    <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
-    <link rel="stylesheet" href=".//upsystem.css" />
+    <link rel="stylesheet" href="./bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="./bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="./upsystem.css" />
     <style>
+      #dataDisplay {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+      }
+
       /* ナビゲーション部分のスタイル */
       .contact__flow-area {
         margin: 40px auto;
@@ -193,632 +200,6 @@
           </div>
 
           <h2>配置予定技術者の資格及び工事経験</h2>
-          <!-- MARK:テーブル一つ目
-            -->
-          <!-- <table
-            style="
-              width: 100%;
-              border-collapse: collapse;
-              margin-bottom: 20px;
-              font-family: Arial, sans-serif;
-            "
-          >
-            <thead>
-              <tr style="background-color: #f2f2f2; color: #333">
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  カテゴリ
-                </th>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  進捗状況
-                </th>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  状態
-                </th>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  操作
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background-color: #ffffff">
-                <td style="border: 1px solid #ccc; padding: 10px">
-                  配置予定技術者の資格
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  完了
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                    color: green;
-                  "
-                >
-                  ✔
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  <button type="submit" class="btn">編集</button>
-                </td>
-              </tr>
-              <tr style="background-color: #ffffff">
-                <td style="border: 1px solid #ccc; padding: 10px">
-                  配置予定技術者の工事経験
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  5/10
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                    color: orange;
-                  "
-                >
-                  進行中
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  <button type="submit" class="btn">編集</button>
-                </td>
-              </tr>
-              <tr style="background-color: #ffffff">
-                <td style="border: 1px solid #ccc; padding: 10px">
-                  配置予定技術者の他工事の従事状況
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  未入力
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                    color: red;
-                  "
-                >
-                  ×
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  <button type="submit" class="btn">編集</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table
-            style="width: 100%; border-collapse: collapse; margin-bottom: 20px"
-          >
-            <thead>
-              <tr>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  カテゴリ
-                </th>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  進捗状況
-                </th>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  状態
-                </th>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  操作
-                </th>
-              </tr>
-            </thead>
-            <div
-              style="
-                width: 100%;
-                height: 1px;
-                background-color: #ccc;
-                margin: 20px 0;
-              "
-            ></div>
-            <tbody>
-              <tr>
-                <td style="border: 1px solid #ccc; padding: 10px">
-                  配置予定技術者の他工事の従事状況
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  未入力
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                    color: red;
-                  "
-                >
-                  未入力の必須項目があります
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  <button
-                    style="
-                      padding: 5px 10px;
-                      background-color: #007bff;
-                      color: #fff;
-                      border: none;
-                      border-radius: 3px;
-                      cursor: pointer;
-                    "
-                  >
-                    編集
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div
-            style="
-              width: 100%;
-              height: 1px;
-              background-color: #ccc;
-              margin: 20px 0;
-            "
-          ></div>
-          <table
-            style="width: 100%; border-collapse: collapse; margin-bottom: 20px"
-          >
-            <thead>
-              <tr>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  カテゴリ
-                </th>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  進捗状況
-                </th>
-                <th
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  状態
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="border: 1px solid #ccc; padding: 10px">
-                  配置予定技術者の資格
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  完了
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                    color: green;
-                  "
-                >
-                  ✔
-                </td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid #ccc; padding: 10px">
-                  配置予定技術者の工事経験
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  5/10
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                    color: orange;
-                  "
-                >
-                  進行中
-                </td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid #ccc; padding: 10px">
-                  配置予定技術者の他工事の従事状況
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                  "
-                >
-                  未入力
-                </td>
-                <td
-                  style="
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: center;
-                    color: red;
-                  "
-                >
-                  ×
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div
-            style="
-              width: 100%;
-              height: 1px;
-              background-color: #ccc;
-              margin: 20px 0;
-            "
-          ></div>
-          <div style="margin-bottom: 20px">
-            <ul style="list-style: none; padding: 0; margin: 0">
-              <li style="margin-bottom: 10px">
-                <button
-                  style="
-                    width: 100%;
-                    padding: 15px;
-                    background-color: #007bff;
-                    color: #fff;
-                    border: none;
-                    font-size: 16px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    border-radius: 5px;
-                    text-align: left;
-                  "
-                >
-                  配置予定技術者の資格
-                  <span style="float: right; color: green">✔ 完了</span>
-                </button>
-              </li>
-              <li style="margin-bottom: 10px">
-                <button
-                  style="
-                    width: 100%;
-                    padding: 15px;
-                    background-color: #f8f9fa;
-                    color: #000;
-                    border: 1px solid #ccc;
-                    font-size: 16px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    border-radius: 5px;
-                    text-align: left;
-                  "
-                >
-                  配置予定技術者の工事経験
-                  <span style="float: right; color: orange">5/10</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  style="
-                    width: 100%;
-                    padding: 15px;
-                    background-color: #f8f9fa;
-                    color: #000;
-                    border: 1px solid #ccc;
-                    font-size: 16px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    border-radius: 5px;
-                    text-align: left;
-                  "
-                >
-                  配置予定技術者の他工事の従事状況
-                  <span style="float: right; color: red">未入力</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-          <div
-            style="
-              width: 100%;
-              height: 1px;
-              background-color: #ccc;
-              margin: 20px 0;
-            "
-          ></div>
-          <div style="display: flex; flex-direction: column; gap: 20px">
-            <div
-              style="
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                background-color: #f8f9fa;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              "
-            >
-              <span>配置予定技術者の資格</span>
-              <span style="color: green; font-weight: bold">✔ 完了</span>
-            </div>
-            <div
-              style="
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                background-color: #f8f9fa;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              "
-            >
-              <span>配置予定技術者の工事経験</span>
-              <span style="color: orange; font-weight: bold">5/10</span>
-            </div>
-            <div
-              style="
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                background-color: #f8f9fa;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              "
-            >
-              <span>配置予定技術者の他工事の従事状況</span>
-              <span style="color: red; font-weight: bold">未入力</span>
-            </div>
-          </div>
-          <div
-            style="
-              width: 100%;
-              height: 1px;
-              background-color: #ccc;
-              margin: 20px 0;
-            "
-          ></div>
-          <div style="margin-bottom: 20px">
-            <div style="margin-bottom: 10px">
-              <button
-                style="
-                  width: 100%;
-                  padding: 15px;
-                  background-color: #007bff;
-                  color: #fff;
-                  border: none;
-                  font-size: 16px;
-                  font-weight: bold;
-                  cursor: pointer;
-                  border-radius: 5px;
-                  text-align: left;
-                "
-              >
-                配置予定技術者の資格
-                <span style="float: right; color: green">✔ 完了</span>
-              </button>
-            </div>
-            <div style="margin-bottom: 10px">
-              <div style="margin-bottom: 5px; font-weight: bold">
-                配置予定技術者の工事経験
-              </div>
-              <div
-                style="
-                  width: 100%;
-                  height: 20px;
-                  background-color: #e9ecef;
-                  border-radius: 5px;
-                  overflow: hidden;
-                "
-              >
-                <div
-                  style="width: 50%; height: 100%; background-color: orange"
-                ></div>
-              </div>
-            </div>
-            <div>
-              <div style="margin-bottom: 5px; font-weight: bold">
-                配置予定技術者の他工事の従事状況
-              </div>
-              <div
-                style="
-                  width: 100%;
-                  height: 20px;
-                  background-color: #e9ecef;
-                  border-radius: 5px;
-                  overflow: hidden;
-                "
-              >
-                <div
-                  style="width: 0%; height: 100%; background-color: red"
-                ></div>
-              </div>
-            </div>
-          </div>
-          <div
-            style="
-              width: 100%;
-              height: 1px;
-              background-color: #ccc;
-              margin: 20px 0;
-            "
-          ></div>
-          <div class="large-button">
-            <button
-              style="
-                width: 100%;
-                padding: 15px 30px;
-                background-color: #007bff;
-                color: #fff;
-                border: 2px solid #007bff;
-                border-radius: 5px;
-                font-size: 16px;
-                font-weight: bold;
-                cursor: pointer;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-              "
-              onmouseover="this.style.backgroundColor='#0056b3';"
-              onmouseout="this.style.backgroundColor='#007bff';"
-              onmousedown="this.style.transform='scale(0.95)';"
-              onmouseup="this.style.transform='scale(1)';"
-            >
-              配置予定技術者の資格
-            </button>
-          </div>
-          <div
-            class="large-button"
-            style="margin-top: 20px; margin-bottom: 20px"
-          >
-            <button
-              style="
-                height: auto;
-                width: 100%;
-                padding: 20px;
-                background-color: #fff;
-                border: 1px solid #ccc;
-                font-size: 18px;
-                cursor: pointer;
-                position: relative;
-                background-color: rgb(255, 255, 204);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-              "
-            >
-              <span
-                style="
-                  /* position: absolute; */
-                  left: 50%;
-                  transform: translateX(-50%);
-                "
-                >配置予定技術者の資格</span
-              >
-              <span
-                style="
-                  position: absolute;
-                  right: 20px;
-                  color: green;
-                  font-weight: bold;
-                  padding: 0 10px;
-                  border: 1px solid green;
-                  background-color: #fff;
-                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                "
-                >✔ 完了</span
-              >
-            </button>
-          </div> -->
           <div class="large-button" style="margin-top: 20px">
             <button
               style="
@@ -873,18 +254,7 @@
               <span style="left: 50%; transform: translateX(-50%)"
                 >配置予定技術者の工事経験</span
               >
-              <!-- <span
-                style="
-                  position: absolute;
-                  right: 20px;
-                  color: orange;
-                  font-weight: bold;
-                  padding: 0 10px;
-                  border: 1px solid orange;
-                  background-color: #fff;
-                "
-                >入力中</span
-              > -->
+
               <span
                 style="
                   position: absolute;
@@ -916,18 +286,6 @@
               <span style="left: 50%; transform: translateX(-50%)"
                 >配置予定技術者の他工事の従事状況</span
               >
-              <!-- <span
-                style="
-                  position: absolute;
-                  right: 20px;
-                  color: red;
-                  font-weight: bold;
-                  padding: 0 10px;
-                  border: 1px solid red;
-                  background-color: #fff;
-                "
-                >未入力</span
-              > -->
             </button>
           </div>
           <div
@@ -949,5 +307,38 @@
         </div>
       </main>
     </div>
+
+    <script>
+      document
+        .getElementById("openWindow1")
+        .addEventListener("click", function () {
+          const screenWidth = window.screen.width; // 画面の幅
+          const screenHeight = window.screen.height; // 画面の高さ
+          window.open(
+            "child1.html", // 開くウィンドウのURL
+            "資格", // ウィンドウ名
+            `width=${screenWidth},height=${screenHeight},top=0,left=0` // フルスクリーンサイズ
+          );
+        });
+
+      document
+        .getElementById("openWindow2")
+        .addEventListener("click", function () {
+          window.open("child2.html", "工事経験", "width=800,height=600");
+        });
+
+      document
+        .getElementById("openWindow3")
+        .addEventListener("click", function () {
+          window.open("child3.html", "従事状況", "width=800,height=600");
+        });
+
+      // 子ウィンドウからデータを受け取る関数
+      window.receiveData = function (data) {
+        document.getElementById(
+          "dataDisplay"
+        ).textContent = `受け取ったデータ: ${data}`;
+      };
+    </script>
   </body>
 </html>
