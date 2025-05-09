@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>子ウィンドウ</title>
+    <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
+    <link rel="stylesheet" href=".//upsystem.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="logo vertical-center">
+              <h1>技術資料等アップロードシステム</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tools vertical-right">
+              <input class="btn" type="button" name="" value="閉じる" onclick="window.close();" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container" style="width: 800px">
+      <h1>子ウィンドウ</h1>
+      <form id="dataForm">
+        <label for="inputData">データを入力してください:</label>
+        <input type="text" id="inputData" name="inputData" />
+        <button type="button" id="saveData">保存して閉じる</button>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("saveData").addEventListener("click", function () {
+        const inputData = document.getElementById("inputData").value;
+
+        // 親ウィンドウの関数を呼び出してデータを渡す
+        if (window.opener && !window.opener.closed) {
+          window.opener.receiveData(inputData);
+        }
+
+        // ウィンドウを閉じる
+        window.close();
+      });
+    </script>
+  </body>
+</html>

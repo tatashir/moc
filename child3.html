@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>従事状況</title>
+  </head>
+  <body>
+    <h1>配置予定技術者の他工事の従事状況</h1>
+    <form id="dataForm">
+      <label for="inputData">従事状況を入力してください:</label>
+      <input type="text" id="inputData" name="inputData" />
+      <button type="button" id="saveData">保存して閉じる</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("saveData")
+        .addEventListener("click", function () {
+          const inputData = document.getElementById("inputData").value;
+
+          if (window.opener && !window.opener.closed) {
+            window.opener.receiveData(`従事状況: ${inputData}`);
+          }
+
+          window.close();
+        });
+    </script>
+  </body>
+</html>
