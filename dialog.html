@@ -138,41 +138,212 @@
       </div>
     </header>
 
-    <div class="container" style="text-align: center; margin-top: 50px">
-      <button id="openDialog">Dialog</button>
-    </div>
-
-    <!-- オーバーレイとダイアログ -->
-    <div id="overlay">
-      <div id="dialog">
-        <p>作成中</p>
-        <button id="closeDialog">閉じる</button>
+    <div class="container" style="width: 800px">
+      <div class="screen-title">
+        <div class="row">
+          <div class="col-12">
+            <h1>データ追加登録</h1>
+          </div>
+        </div>
       </div>
+
+      <div class="top-area">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="form-table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>aaaaaa</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td>
+                  <a href="#">aaaaa</a>
+                </td>
+              </tr>
+              <tr>
+                <th>対象申請書種別</th>
+                <td>testtesttesttest</td>
+              </tr>
+              <tr>
+                <th>対象資料種別</th>
+                <td>testtesttesttest</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <main class="main">
+        <div class="container">
+          <div class="contact__flow-area">
+            <div class="box01 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP1</span>
+              </div>
+            </div>
+            <div class="box02 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP2</span>
+              </div>
+            </div>
+            <div class="box03 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP3</span>
+              </div>
+            </div>
+            <div class="box04 contact__flow-list">
+              <div class="contact__flow-list-content">
+                <span class="contact__title-number">STEP4</span>
+              </div>
+            </div>
+          </div>
+
+          <h2>配置予定技術者の資格及び工事経験</h2>
+          <!-- ボタン1 -->
+          <div class="large-button" style="margin-top: 20px">
+            <button
+              style="
+                height: auto;
+                width: 100%;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                font-size: 18px;
+                cursor: pointer;
+                position: relative;
+                background-color: rgb(255, 255, 204);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              "
+              id="openWindow1"
+            >
+              <span style="left: 50%; transform: translateX(-50%)"
+                >配置予定技術者の資格</span
+              >
+              <span
+                style="
+                  position: absolute;
+                  right: 20px;
+                  color: green;
+                  font-weight: bold;
+                  padding: 0 10px;
+                  border: 1px solid green;
+                  background-color: #fff;
+                "
+                >入力済 ✔</span
+              >
+            </button>
+          </div>
+
+          <!-- ボタン2 -->
+          <div class="large-button" style="margin-top: 20px">
+            <button
+              style="
+                height: auto;
+                width: 100%;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                font-size: 18px;
+                cursor: pointer;
+                position: relative;
+                background-color: rgb(255, 255, 204);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              "
+              id="openWindow2"
+            >
+              <span style="left: 50%; transform: translateX(-50%)"
+                >配置予定技術者の工事経験</span
+              >
+              <span
+                style="
+                  position: absolute;
+                  right: 20px;
+                  color: green;
+                  font-weight: bold;
+                  padding: 0 10px;
+                  border: 1px solid green;
+                  background-color: #fff;
+                "
+                >入力済 ✔</span
+              >
+            </button>
+          </div>
+
+          <!-- ボタン3 -->
+          <div class="large-button" style="margin-top: 20px">
+            <button
+              style="
+                height: auto;
+                width: 100%;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                font-size: 18px;
+                cursor: pointer;
+                position: relative;
+                background-color: rgb(255, 255, 204);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              "
+              id="openWindow3"
+            >
+              <span>配置予定技術者の他工事の従事状況</span>
+            </button>
+          </div>
+          <div
+            class="text-center"
+            style="
+              margin: 40px 0 20px 0;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <a href="step2.html" class="btn" style="text-decoration: none"
+              >戻る</a
+            >
+            <a class="btn" style="text-decoration: none">一時保存 </a>
+            <a href="step4.html" class="btn" style="text-decoration: none"
+              >次へ</a
+            >
+          </div>
+        </div>
+      </main>
+      <div id="dataDisplay">ここにデータが表示されます</div>
     </div>
 
     <script>
-      // ダイアログを開くボタン
       document
-        .getElementById("openDialog")
+        .getElementById("openWindow1")
         .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "flex";
+          const screenWidth = window.innerWidth; // 親ウィンドウの幅
+          const screenHeight = window.innerHeight; // 親ウィンドウの高さ
+          const screenX = window.screenX; // 親ウィンドウのX座標
+          const screenY = window.screenY; // 親ウィンドウのY座標
+          window.open(
+            "child1.html", // 開くウィンドウのURL
+            "資格", // ウィンドウ名
+            `width=${screenWidth},height=${screenHeight},left=${screenX},top=${screenY}` // 親ウィンドウと同じサイズ・位置
+          );
         });
 
-      // ダイアログを閉じるボタン
       document
-        .getElementById("closeDialog")
+        .getElementById("openWindow2")
         .addEventListener("click", function () {
-          document.getElementById("overlay").style.display = "none";
+          window.open("child2.html", "工事経験", "width=800,height=600");
         });
 
-      // オーバーレイをクリックして閉じる
       document
-        .getElementById("overlay")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            this.style.display = "none";
-          }
+        .getElementById("openWindow3")
+        .addEventListener("click", function () {
+          window.open("child3.html", "従事状況", "width=800,height=600");
         });
+
+      // 子ウィンドウからデータを受け取る関数
+      window.receiveData = function (data) {
+        document.getElementById(
+          "dataDisplay"
+        ).textContent = `受け取ったデータ: ${data}`;
+      };
     </script>
   </body>
 </html>

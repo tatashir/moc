@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>資格</title>
+    <link rel="stylesheet" href="./bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="./bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="./upsystem.css" />
+    <style>
+      #dataDisplay {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+      }
+
+      /* ナビゲーション部分のスタイル */
+      .contact__flow-area {
+        margin: 40px auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contact__flow-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: calc(100% / 3); */
+        width: calc(100% / 4);
+        height: 60px;
+        position: relative;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .contact__flow-area .box01 {
+        background: #fff;
+      }
+
+      .contact__flow-area .box02 {
+        background: #fff;
+        color: #000;
+      }
+
+      .contact__flow-area .box03 {
+        background: rgb(187, 221, 255);
+        color: #000;
+      }
+
+      .contact__flow-area .box04 {
+        background: #fff;
+        color: #000;
+      }
+
+      .contact__flow-area .box02:before,
+      .contact__flow-area .box02:after,
+      .contact__flow-area .box03:before,
+      .contact__flow-area .box04:before,
+      .contact__flow-area .box04:after {
+        border-left: 20px solid #ffffff;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .contact__flow-area .box02:before {
+        border-left-color: #b4b4b4;
+        left: 0;
+        top: -1px;
+        z-index: 1;
+      }
+
+      .contact__flow-area .box02:after {
+        border-left-color: #fff;
+        left: -1px;
+        top: -1px;
+        z-index: 2;
+      }
+
+      .contact__flow-area .box03::before {
+        /* border-left-color: #f2d8f2; */
+        /* border-left-color: rgb(187, 221, 255); */
+        border-left-color: #fff;
+        left: 0;
+        top: -1px;
+        z-index: 1;
+      }
+
+      .contact__flow-area .box03:after {
+        border-left-color: #fff;
+        left: -1px;
+        top: -1px;
+        z-index: 2;
+      }
+
+      .contact__flow-area .box04::before {
+        border-left-color: rgb(187, 221, 255);
+        left: 0;
+        top: -1px;
+        z-index: 1;
+      }
+
+      .contact__flow-area .box04:after {
+        border-left-color: rgb(187, 221, 255);
+        left: -1px;
+        top: -1px;
+        z-index: 2;
+      }
+
+      .contact__title-number {
+        margin-bottom: 6px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="logo vertical-center">
+              <h1></h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tools vertical-right">
+              <input class="btn" type="button" name="" value="閉じる" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <h1>資格ポップアップウィンドウ</h1>
+      <form id="dataForm">
+        <label for="inputData">資格情報を入力してください:</label>
+        <input type="text" id="inputData" name="inputData" />
+        <button type="button" id="fetchData">既存技術者情報の呼び出し</button>
+        <button type="button" id="saveData">保存して閉じる</button>
+      </form>
+    </main>
+    <script>
+      document
+        .getElementById("fetchData")
+        .addEventListener("click", function () {
+          if (window.opener && !window.opener.closed) {
+            const existingData = window.opener.getExistingData();
+            document.getElementById("inputData").value = existingData || "";
+          } else {
+            alert("親ウィンドウが見つかりません。");
+          }
+        });
+
+      document
+        .getElementById("saveData")
+        .addEventListener("click", function () {
+          const inputData = document.getElementById("inputData").value;
+
+          if (window.opener && !window.opener.closed) {
+            window.opener.receiveData(`資格: ${inputData}`);
+          }
+
+          window.close();
+        });
+    </script>
+  </body>
+</html>
