@@ -7,6 +7,59 @@
     <link rel="stylesheet" href="./bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="./bootstrap-grid.min.css" />
     <link rel="stylesheet" href="./upsystem.css" />
+    <style>
+      .step-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-size: 14px;
+        background-color: white;
+      }
+
+      .step-table th,
+      .step-table td {
+        border: 1px solid #aaa;
+        padding: 8px;
+        vertical-align: middle;
+      }
+
+      .step-table th {
+        background-color: #f4a460;
+        color: white;
+        text-align: center;
+      }
+
+      .step-table .step-number {
+        background-color: #ffe4e1;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .command-button {
+        width: 100%;
+        text-align: left;
+        padding: 6px 12px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        cursor: default;
+        font-size: 14px;
+      }
+
+      .status-cell {
+        text-align: center;
+        font-weight: bold;
+        color: blue;
+      }
+
+      .disabled-row {
+        background-color: #e0e0e0;
+        color: #555;
+      }
+
+      .disabled-row .status-cell {
+        color: #555;
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -41,21 +94,19 @@
             <table class="form-table">
               <tr>
                 <th>調達案件番号</th>
-                <td>aaaaaa</td>
+                <td>0123456789</td>
               </tr>
               <tr>
                 <th>調達案件名称</th>
-                <td>
-                  <a href="#">aaaaa</a>
-                </td>
+                <td><a href="">案件名</a></td>
               </tr>
               <tr>
                 <th>対象申請書種別</th>
-                <td>testtesttesttest</td>
+                <td>入札書</td>
               </tr>
               <tr>
                 <th>対象資料種別</th>
-                <td>testtesttesttest</td>
+                <td>簡易技術資料</td>
               </tr>
             </table>
           </div>
@@ -63,7 +114,66 @@
       </div>
 
       <main class="main">
-        <div>write your content here</div>
+        <table class="step-table">
+          <thead>
+            <tr>
+              <th style="width: 60px">Step</th>
+              <th style="width: 300px">実行コマンド</th>
+              <th style="width: 80px">状態</th>
+              <th>実行内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="step-number">1</td>
+              <td>
+                <button type="button" class="command-button">
+                  入力条件の設定／会社情報の入力
+                </button>
+              </td>
+              <td class="status-cell">未入力</td>
+              <td>
+                入力条件の設定を行います。また対象工事の名称・提出先・発注者名・住所・電話番号等について入力して下さい。
+              </td>
+            </tr>
+            <tr>
+              <td class="step-number">2</td>
+              <td>
+                <button type="button" class="command-button">
+                  同種（及び類似）工事の施工実績の入力
+                </button>
+              </td>
+              <td class="status-cell">未入力</td>
+              <td>
+                今回指定の工事に類似した工事の実績について入力して下さい。
+              </td>
+            </tr>
+            <tr>
+              <td class="step-number">3</td>
+              <td>
+                <button type="button" class="command-button">
+                  配置予定技術者の資格及び工事経験の入力
+                </button>
+              </td>
+              <td class="status-cell">未入力</td>
+              <td>
+                今回指定の工事・配置可能な技術者の内容について入力して下さい。技術者が特定できない場合は、複数人（最大10名）を入力することができます。
+              </td>
+            </tr>
+            <tr>
+              <td class="step-number">4</td>
+              <td>
+                <button type="button" class="command-button">
+                  提出用ファイルの作成・印刷
+                </button>
+              </td>
+              <td class="status-cell">未出力</td>
+              <td>
+                上記までで入力した内容から提出用ファイル（Excel形式）を作成します。
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </main>
     </div>
   </body>
