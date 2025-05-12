@@ -8,14 +8,17 @@
         /* font-family: "MS UI Gothic", sans-serif; */
         background-color: #f0f0f0;
         margin: 0;
+        /* 下部に固定フッター分の余白を確保 */
+        padding-bottom: 80px;
       }
+
       .container {
-        /* margin: 0 auto; */
         background-color: #fff;
         border: 2px solid #0033cc;
         padding: 10px;
         box-sizing: border-box;
       }
+
       h1 {
         background-color: #3366ff;
         color: #fff;
@@ -24,6 +27,7 @@
         font-size: 16px;
         text-align: center;
       }
+
       .section {
         border: 1px solid #aaa;
         padding: 10px;
@@ -32,64 +36,14 @@
         flex-direction: column;
         background-color: #ffffcc;
       }
-      .row {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 8px;
-      }
-      .row button {
-        min-width: 180px;
-        padding: 6px 8px;
-        border: 1px solid #3399ff;
-        background-color: #cce5ff;
-        cursor: pointer;
-        font-size: 14px;
-        flex-shrink: 0;
-      }
-      .row button:active {
-        background-color: #b3d7ff;
-      }
-      .row textarea {
-        flex: 1;
-        margin-left: 10px;
-        padding: 6px;
-        border: 1px solid #aaa;
-        resize: none;
-        font-size: 13px;
-        font-family: inherit;
-      }
-      /* 氏名・資格だけボタン単体なのでテキストエリアなし */
-      .row.name-row button {
-        background-color: #e6ffe6;
-        border-color: #66cc66;
-      }
-      .bottom {
-        text-align: right;
-        margin-top: 20px;
-      }
-      .bottom button {
-        background-color: #ffffcc;
-        border: 1px solid #000;
-        padding: 8px 16px;
-        font-size: 14px;
-        cursor: pointer;
-      }
-      .note {
-        font-size: 12px;
-        margin-top: 4px;
-        text-align: left;
-        color: #555;
-      }
 
       .section-content {
         display: flex;
         justify-content: space-between;
       }
-
       .left-column {
         flex: 1;
       }
-
       .right-column {
         display: flex;
         align-items: center;
@@ -118,13 +72,34 @@
         gap: 5px;
         flex: 1;
       }
-
       .flex-inputs textarea {
         flex: 1;
         height: 24px;
         resize: none;
         font-family: inherit;
         font-size: 13px;
+        border: 1px solid #aaa;
+        padding: 6px;
+      }
+
+      .row-horizontal {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 8px;
+      }
+      .sub-row {
+        display: flex;
+        flex-direction: column;
+        background-color: #eef;
+        padding: 4px;
+        border: 1px solid #ccc;
+        flex: 1;
+      }
+      .sub-row.experience {
+        background-color: #e6ffe6;
+      }
+      .sub-row.other-work {
+        background-color: #e6f9ff;
       }
 
       .stacked-textareas {
@@ -133,12 +108,13 @@
         gap: 4px;
         flex: 1;
       }
-
       .stacked-textareas textarea {
         resize: none;
         height: 24px;
         font-family: inherit;
         font-size: 13px;
+        border: 1px solid #aaa;
+        padding: 6px;
       }
 
       .delete-button {
@@ -150,39 +126,32 @@
         cursor: pointer;
       }
 
-      .row-horizontal {
-        display: flex;
-        gap: 16px;
-        margin-bottom: 8px;
+      .note {
+        font-size: 12px;
+        margin-top: 4px;
+        text-align: left;
+        color: #555;
       }
 
-      .sub-row {
-        display: flex;
-        flex-direction: column;
-        background-color: #eef;
-        padding: 4px;
-        border: 1px solid #ccc;
-        flex: 1;
-      }
-
-      .sub-row.experience {
-        background-color: #e6ffe6; /* 緑系 */
-      }
-
-      .sub-row.other-work {
-        background-color: #e6f9ff; /* 青系 */
-      }
-
-      .sub-row .label-button {
-        margin-bottom: 4px;
-        min-width: unset;
+      /* ===== 固定フッター ===== */
+      .fixed-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
         width: 100%;
+        background-color: #fff;
+        border-top: 1px solid #000;
+        text-align: right;
+        padding: 8px 20px;
+        box-sizing: border-box;
+        z-index: 1000;
       }
-
-      .sub-row .stacked-textareas {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
+      .fixed-footer button {
+        background-color: #ffffcc;
+        border: 1px solid #000;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -602,11 +571,14 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="bottom">
-        <button onclick="window.close()">メニューに戻る</button>
-      </div>
-      <p class="note">配置予定者が特定出来ない場合、最大10名まで指定可能</p>
+    <!-- 注意書き -->
+    <p class="note">配置予定者が特定出来ない場合、最大10名まで指定可能</p>
+
+    <!-- 固定フッター -->
+    <div class="fixed-footer">
+      <button onclick="window.close()">メニューに戻る</button>
     </div>
   </body>
 </html>
