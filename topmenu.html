@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dialog</title>
+    <title>入力選択メニュー</title>
     <link rel="stylesheet" href="./bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="./bootstrap-grid.min.css" />
     <link rel="stylesheet" href="./upsystem.css" />
@@ -151,7 +151,7 @@
             <tr>
               <td class="step-number">3</td>
               <td>
-                <button type="button" class="command-button">
+                <button id="openWindow3" type="button" class="command-button">
                   配置予定技術者の資格及び工事経験の入力
                 </button>
               </td>
@@ -176,5 +176,24 @@
         </table>
       </main>
     </div>
+    <script>
+      function openPopup(url, name) {
+        const screenWidth = window.innerWidth; // 親ウィンドウの幅
+        const screenHeight = window.innerHeight; // 親ウィンドウの高さ
+        const screenX = window.screenX; // 親ウィンドウのX座標
+        const screenY = window.screenY; // 親ウィンドウのY座標
+        window.open(
+          url, // 開くウィンドウのURL
+          name, // ウィンドウ名
+          `width=${screenWidth},height=${screenHeight},left=${screenX},top=${screenY}` // 親ウィンドウと同じサイズ・位置
+        );
+      }
+
+      document
+        .getElementById("openWindow3")
+        .addEventListener("click", function () {
+          openPopup("child1-2.html", "技術者情報");
+        });
+    </script>
   </body>
 </html>
