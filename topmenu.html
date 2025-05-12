@@ -164,14 +164,12 @@
             <tr>
               <td class="step-number">4</td>
               <td>
-                <button type="button" class="command-button">
-                  入力情報の確認／印刷
+                <button id="openWindow4" type="button" class="command-button">
+                  保存／印刷
                 </button>
               </td>
               <td class="status-cell">未出力</td>
-              <td>
-                上記までで入力した内容から提出用ファイル（Excel形式）を作成します。
-              </td>
+              <td>入力した情報の保存、印刷が行えます。</td>
             </tr>
           </tbody>
         </table>
@@ -199,13 +197,19 @@
       document
         .getElementById("openWindow2")
         .addEventListener("click", function () {
-          openPopup("child2-2.html", "会社情報");
+          openPopup("child2-2.html", "施工実績");
         });
 
       document
         .getElementById("openWindow3")
         .addEventListener("click", function () {
           openPopup("child3-2.html", "技術者情報");
+        });
+
+      document
+        .getElementById("openWindow4")
+        .addEventListener("click", function () {
+          openPopup("child4-2.html", "保存／印刷");
         });
     </script>
   </body>
