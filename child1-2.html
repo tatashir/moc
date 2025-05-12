@@ -6,7 +6,7 @@
     <style>
       /* ページ全体 */
       body {
-        font-family: "MS UI Gothic", sans-serif;
+        /* font-family: "MS UI Gothic", sans-serif; */
         background-color: #f0f0f0;
         margin: 0;
         padding: 20px;
@@ -50,7 +50,7 @@
         background-color: #e0e0e0;
         border: 1px solid #aaa;
         padding: 6px;
-        color: #555;
+        /* color: #555; */
         box-sizing: border-box;
       }
 
@@ -141,19 +141,19 @@
 
           <div class="form-group">
             <label>対象工事への参加区分</label>
-            <label
-              ><input
+            <div>
+              <input
                 type="radio"
                 name="participationType"
                 value="single"
                 checked
               />
-              単体企業</label
-            >
-            <label
-              ><input type="radio" name="participationType" value="joint" />
-              共同企業体</label
-            >
+              単体企業
+            </div>
+            <div>
+              <input type="radio" name="participationType" value="joint" />
+              共同企業体
+            </div>
           </div>
 
           <div class="form-group">

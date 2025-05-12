@@ -5,7 +5,7 @@
     <title>技術資料入力システム – 配置予定技術者の選択</title>
     <style>
       body {
-        font-family: "MS UI Gothic", sans-serif;
+        /* font-family: "MS UI Gothic", sans-serif; */
         background-color: #f0f0f0;
         margin: 0;
       }
@@ -190,34 +190,63 @@
     <div class="container">
       <h1>技術資料入力システム　配置予定技術者の選択</h1>
 
-      <!-- ここにJavaScriptで10セクションを自動生成 -->
-      <div id="sections"></div>
-
-      <div class="bottom">
-        <button onclick="window.close()">メニューに戻る</button>
-      </div>
-      <p class="note">配置予定者が特定出来ない場合、最大10名まで指定可能</p>
-    </div>
-
-    <template id="tpl-section">
       <div class="section">
         <div class="section-content">
           <div class="left-column">
-            <!-- 氏名・資格等 -->
             <div class="row">
               <button type="button" class="label-button">
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
-                <textarea placeholder="" rows="1"></textarea>
-                <textarea placeholder="" rows="1"></textarea>
-                <textarea placeholder="" rows="1"></textarea>
+                <textarea rows="1">監理技術者 平成19年取得 ×××××</textarea>
+                <textarea rows="1">昭和38年4月17日生 〇〇大</textarea>
+                <textarea rows="1">
+一級土木施工管理技士 平成5年1月取得</textarea
+                >
               </div>
             </div>
-
-            <!-- 工事経験 & 他工事（横並び） -->
             <div class="row-horizontal">
-              <!-- 工事経験 -->
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1">○○○○○○○○○○工事</textarea>
+                  <textarea rows="1">△△△△△△△△△△工事</textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1">○○○○○○○○○○工事</textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
               <div class="sub-row experience">
                 <button type="button" class="label-button">
                   工事経験の入力
@@ -228,15 +257,14 @@
                   <textarea rows="1"></textarea>
                 </div>
               </div>
-              <!-- 他工事 -->
               <div class="sub-row other-work">
                 <button type="button" class="label-button">
                   他工事の従事状況
                 </button>
                 <div class="stacked-textareas">
-                  <textarea rows="1" placeholder=""></textarea>
-                  <textarea rows="1" placeholder=""></textarea>
-                  <textarea rows="1" placeholder=""></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
                 </div>
               </div>
             </div>
@@ -246,15 +274,339 @@
           </div>
         </div>
       </div>
-    </template>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+                <textarea rows="1"></textarea>
+              </div>
+            </div>
+            <div class="row-horizontal">
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
 
-    <script>
-      const container = document.getElementById("sections");
-      const tpl = document.getElementById("tpl-section").content;
-      // 10セクション生成
-      for (let i = 0; i < 10; i++) {
-        container.appendChild(document.importNode(tpl, true));
-      }
-    </script>
+      <div class="bottom">
+        <button onclick="window.close()">メニューに戻る</button>
+      </div>
+      <p class="note">配置予定者が特定出来ない場合、最大10名まで指定可能</p>
+    </div>
   </body>
 </html>
