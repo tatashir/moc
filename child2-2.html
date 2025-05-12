@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>技術資料入力システム　同種(及び類似)工事の施工実績</title>
+    <style>
+      body {
+        font-family: "MS UI Gothic", sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        /* padding: 20px; */
+        color: #333;
+      }
+      .container {
+        background-color: #fff;
+        border: 2px solid #0033cc;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      h1 {
+        background-color: #3366ff;
+        color: #fff;
+        padding: 8px;
+        margin: -10px -10px 20px -10px;
+        font-size: 16px;
+        text-align: center;
+      }
+      /* === タブ === */
+      .tabs {
+        display: flex;
+        border-bottom: 2px solid #0033cc;
+        margin-bottom: 10px;
+        list-style: none;
+        padding: 0;
+      }
+      .tabs li {
+        padding: 6px 12px;
+        cursor: pointer;
+        background: #e0e0e0;
+        margin-right: 2px;
+        user-select: none;
+      }
+      .tabs li.active {
+        background: #fff;
+        border: 2px solid #0033cc;
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+      }
+      .tab-content > .section {
+        display: none;
+      }
+      .tab-content > .section.active {
+        display: block;
+      }
+      .section {
+        background: #ffffcc;
+        border: 1px solid #aaa;
+        padding: 10px;
+        border-radius: 0 4px 4px 4px;
+      }
+      .row {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+      .row .label {
+        flex-shrink: 0;
+        width: 180px;
+        padding: 6px;
+        background: #e0e0e0;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        text-align: left;
+        font-size: 14px;
+        line-height: 1.2;
+      }
+      .row textarea,
+      .row input[type="text"],
+      .row select {
+        flex: 1;
+        padding: 6px;
+        font-family: inherit;
+        font-size: 13px;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+      }
+      .row textarea {
+        resize: vertical;
+      }
+      .row .small {
+        width: 80px;
+      }
+      .date-group {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .date-group select,
+      .date-group input {
+        width: auto;
+        flex: none;
+      }
+      .right-buttons {
+        text-align: right;
+        margin-top: 10px;
+      }
+      .right-buttons button {
+        background-color: #ffcccc;
+        border: 1px solid #ff9999;
+        padding: 6px 10px;
+        font-size: 13px;
+        cursor: pointer;
+        margin-left: 4px;
+      }
+      .bottom {
+        text-align: right;
+        margin-top: 15px;
+      }
+      .bottom button {
+        background-color: #ffffcc;
+        border: 1px solid #000;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-left: 8px;
+      }
+      .note {
+        font-size: 12px;
+        margin-top: 4px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>技術資料入力システム　同種(及び類似)工事の施工実績</h1>
+
+      <!-- タブ -->
+      <ul class="tabs">
+        <li class="active" data-tab="tab1">施工実績1</li>
+        <li data-tab="tab2">施工実績2</li>
+        <li data-tab="tab3">施工実績3</li>
+        <li data-tab="tab4">施工実績4</li>
+        <li data-tab="tab5">施工実績5</li>
+      </ul>
+
+      <!-- タブコンテンツ -->
+      <div class="tab-content">
+        <!-- ===== 施工実績1 ===== -->
+        <div id="tab1" class="section active">
+          <!-- 同種工事の条件 -->
+          <div class="row">
+            <span class="label">同種工事の条件</span>
+            <textarea
+              rows="3"
+              placeholder="ア）河川での護岸工事&#10;イ）海岸での護岸工事"
+            ></textarea>
+          </div>
+
+          <!-- (参考)コリンズ記載外 -->
+          <div class="row">
+            <span class="label"
+              >(参考)コリンズに記載されていない同種工事の項目数量等の記載</span
+            >
+            <textarea rows="3" placeholder="△△△　×××"></textarea>
+          </div>
+
+          <!-- 以下、各フィールド -->
+          <div class="row">
+            <span class="label">工事名</span>
+            <input type="text" value="○○○○○○○○工事" />
+          </div>
+
+          <div class="row">
+            <span class="label">発注機関区分選択</span>
+            <button type="button">選択</button>
+            <input
+              type="text"
+              placeholder="中国整備局 ○○○○○○事務所"
+              style="margin-left: 8px"
+            />
+          </div>
+
+          <div class="row">
+            <span class="label">発注年度</span>
+            <div class="date-group">
+              <select>
+                <option>平成</option>
+                <!-- 他 -->
+              </select>
+              <input type="text" class="small" value="20" /> 年度
+            </div>
+          </div>
+
+          <div class="row">
+            <span class="label">受注者名</span>
+            <input type="text" placeholder="△△△△△△△△△△" />
+          </div>
+
+          <div class="row">
+            <span class="label">施工場所</span>
+            <input type="text" placeholder="○○県○○市○○地区内" />
+          </div>
+
+          <div class="row">
+            <span class="label">請負金額</span>
+            <input type="text" placeholder="24,567,897" /> 円
+          </div>
+
+          <div class="row">
+            <span class="label">工期</span>
+            <div class="date-group">
+              <select>
+                <option>平成</option>
+              </select>
+              <input type="text" class="small" value="26" /> 年
+              <select>
+                <option>12</option>
+                <!-- 月 -->
+              </select>
+              月
+              <select>
+                <option>1</option>
+                <!-- 日 -->
+              </select>
+              日 ～
+              <select>
+                <option>平成</option>
+              </select>
+              <input type="text" class="small" value="27" /> 年
+              <select>
+                <option>3</option>
+              </select>
+              月
+              <select>
+                <option>31</option>
+              </select>
+              日
+            </div>
+          </div>
+
+          <div class="row">
+            <span class="label">受注形態</span>
+            <select>
+              <option>単体</option>
+              <!-- 他 -->
+            </select>
+            <button style="margin-left: 8px">出資比率</button>
+            <input type="text" class="small" placeholder="%" />
+          </div>
+
+          <div class="row">
+            <span class="label">工事内容</span>
+            <input type="text" placeholder="〇〇〇〇m³" />
+          </div>
+
+          <div class="row">
+            <span class="label">CORINS登録の有無</span>
+            <select>
+              <option>有り</option>
+              <!-- 他 -->
+            </select>
+            <span style="margin: 0 8px">CORINS登録番号</span>
+            <input type="text" class="small" placeholder="000000" /> -
+            <input type="text" class="small" placeholder="0000" /> -
+            <input type="text" class="small" placeholder="000" /> -
+            <input type="text" class="small" placeholder="00" />
+          </div>
+
+          <div class="row">
+            <span class="label">コメント</span>
+            <textarea rows="2"></textarea>
+          </div>
+
+          <!-- 右上：複写・初期化ボタン -->
+          <div class="right-buttons">
+            <button type="button">既に入力された実績からの複写</button>
+            <button type="button">入力画面の初期化</button>
+          </div>
+
+          <!-- 下部アクション -->
+          <!-- <div class="bottom">
+            <button type="button">印刷イメージの確認</button>
+          </div> -->
+        </div>
+
+        <!-- ===== 施工実績2～5 は同じ構造を繰り返し ===== -->
+        <div id="tab2" class="section">…</div>
+        <div id="tab3" class="section">…</div>
+        <div id="tab4" class="section">…</div>
+        <div id="tab5" class="section">…</div>
+      </div>
+
+      <div class="bottom">
+        <button type="button">登録</button>
+        <button onclick="window.close()">メニューに戻る</button>
+      </div>
+    </div>
+
+    <script>
+      // タブ切替
+      document.querySelectorAll(".tabs li").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // タブボタン
+          document
+            .querySelectorAll(".tabs li")
+            .forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          // コンテンツ
+          const tgt = tab.getAttribute("data-tab");
+          document.querySelectorAll(".tab-content .section").forEach((sec) => {
+            sec.id === tgt
+              ? sec.classList.add("active")
+              : sec.classList.remove("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

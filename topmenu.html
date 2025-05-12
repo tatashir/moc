@@ -128,7 +128,7 @@
             <tr>
               <td class="step-number">1</td>
               <td>
-                <button type="button" class="command-button">
+                <button id="openWindow1" type="button" class="command-button">
                   入力条件の設定／会社情報の入力
                 </button>
               </td>
@@ -140,7 +140,7 @@
             <tr>
               <td class="step-number">2</td>
               <td>
-                <button type="button" class="command-button">
+                <button id="openWindow2" type="button" class="command-button">
                   同種（及び類似）工事の施工実績の入力
                 </button>
               </td>
@@ -191,9 +191,21 @@
       }
 
       document
+        .getElementById("openWindow1")
+        .addEventListener("click", function () {
+          openPopup("child1-2.html", "会社情報");
+        });
+
+      document
+        .getElementById("openWindow2")
+        .addEventListener("click", function () {
+          openPopup("child2-2.html", "会社情報");
+        });
+
+      document
         .getElementById("openWindow3")
         .addEventListener("click", function () {
-          openPopup("child1-2.html", "技術者情報");
+          openPopup("child3-2.html", "技術者情報");
         });
     </script>
   </body>
