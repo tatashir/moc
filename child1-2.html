@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>技術資料入力システム – 配置予定技術者の選択</title>
+    <style>
+      body {
+        font-family: "MS UI Gothic", sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+      }
+      .container {
+        /* margin: 0 auto; */
+        background-color: #fff;
+        border: 2px solid #0033cc;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      h1 {
+        background-color: #3366ff;
+        color: #fff;
+        padding: 8px;
+        margin: -10px -10px 20px -10px;
+        font-size: 16px;
+        text-align: center;
+      }
+      .section {
+        border: 1px solid #aaa;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffcc;
+      }
+      .row {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+      .row button {
+        min-width: 180px;
+        padding: 6px 8px;
+        border: 1px solid #3399ff;
+        background-color: #cce5ff;
+        cursor: pointer;
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+      .row button:active {
+        background-color: #b3d7ff;
+      }
+      .row textarea {
+        flex: 1;
+        margin-left: 10px;
+        padding: 6px;
+        border: 1px solid #aaa;
+        resize: none;
+        font-size: 13px;
+        font-family: inherit;
+      }
+      /* 氏名・資格だけボタン単体なのでテキストエリアなし */
+      .row.name-row button {
+        background-color: #e6ffe6;
+        border-color: #66cc66;
+      }
+      .bottom {
+        text-align: right;
+        margin-top: 20px;
+      }
+      .bottom button {
+        background-color: #ffffcc;
+        border: 1px solid #000;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .note {
+        font-size: 12px;
+        margin-top: 4px;
+        text-align: left;
+        color: #555;
+      }
+
+      .section-content {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .left-column {
+        flex: 1;
+      }
+
+      .right-column {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+
+      .row {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+
+      .label-button {
+        min-width: 180px;
+        padding: 6px;
+        margin-right: 10px;
+        border: 1px solid #aaa;
+        background-color: #e0e0e0;
+        cursor: pointer;
+        text-align: left;
+        font-size: 14px;
+      }
+
+      .flex-inputs {
+        display: flex;
+        gap: 5px;
+        flex: 1;
+      }
+
+      .flex-inputs textarea {
+        flex: 1;
+        height: 24px;
+        resize: none;
+        font-family: inherit;
+        font-size: 13px;
+      }
+
+      .stacked-textareas {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+      }
+
+      .stacked-textareas textarea {
+        resize: none;
+        height: 24px;
+        font-family: inherit;
+        font-size: 13px;
+      }
+
+      .delete-button {
+        background-color: #ffcccc;
+        color: black;
+        border: 1px solid #ff9999;
+        padding: 6px 10px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .row-horizontal {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 8px;
+      }
+
+      .sub-row {
+        display: flex;
+        flex-direction: column;
+        background-color: #eef;
+        padding: 4px;
+        border: 1px solid #ccc;
+        flex: 1;
+      }
+
+      .sub-row.experience {
+        background-color: #e6ffe6; /* 緑系 */
+      }
+
+      .sub-row.other-work {
+        background-color: #e6f9ff; /* 青系 */
+      }
+
+      .sub-row .label-button {
+        margin-bottom: 4px;
+        min-width: unset;
+        width: 100%;
+      }
+
+      .sub-row .stacked-textareas {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>技術資料入力システム　配置予定技術者の選択</h1>
+
+      <!-- ここにJavaScriptで10セクションを自動生成 -->
+      <div id="sections"></div>
+
+      <div class="bottom">
+        <button>メニューに戻る</button>
+      </div>
+      <p class="note">配置予定者が特定出来ない場合、最大10名まで指定可能</p>
+    </div>
+
+    <template id="tpl-section">
+      <div class="section">
+        <div class="section-content">
+          <div class="left-column">
+            <!-- 氏名・資格等 -->
+            <div class="row">
+              <button type="button" class="label-button">
+                氏名・資格等の入力
+              </button>
+              <div class="flex-inputs">
+                <textarea placeholder="" rows="1"></textarea>
+                <textarea placeholder="" rows="1"></textarea>
+                <textarea placeholder="" rows="1"></textarea>
+              </div>
+            </div>
+
+            <!-- 工事経験 & 他工事（横並び） -->
+            <div class="row-horizontal">
+              <!-- 工事経験 -->
+              <div class="sub-row experience">
+                <button type="button" class="label-button">
+                  工事経験の入力
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                  <textarea rows="1"></textarea>
+                </div>
+              </div>
+              <!-- 他工事 -->
+              <div class="sub-row other-work">
+                <button type="button" class="label-button">
+                  他工事の従事状況
+                </button>
+                <div class="stacked-textareas">
+                  <textarea rows="1" placeholder=""></textarea>
+                  <textarea rows="1" placeholder=""></textarea>
+                  <textarea rows="1" placeholder=""></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <button type="button" class="delete-button">技術者の削除</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <script>
+      const container = document.getElementById("sections");
+      const tpl = document.getElementById("tpl-section").content;
+      // 10セクション生成
+      for (let i = 0; i < 10; i++) {
+        container.appendChild(document.importNode(tpl, true));
+      }
+    </script>
+  </body>
+</html>
+
