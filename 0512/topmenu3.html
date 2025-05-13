@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>技術資料入力システム 入力選択メニュー</title>
+    <link rel="stylesheet" href="../bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="../bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../upsystem.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        /* font-family: "MS UI Gothic", sans-serif; */
+        background-color: #f0f0ff;
+        margin: 0;
+      }
+      .container {
+        width: 960px;
+        margin: auto;
+        /* background: #fff; */
+        /* border: 2px solid #0033cc; */
+        padding: 20px;
+      }
+      .header-bar {
+        background-color: #3366ff;
+        color: white;
+        padding: 8px 16px;
+        font-weight: bold;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .top-info {
+        background-color: #e6ffff;
+        padding: 10px;
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .top-info label {
+        min-width: 80px;
+        font-weight: bold;
+      }
+      .step-card {
+        display: flex;
+        background: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 16px;
+      }
+      .step-left {
+        background: #ffcccc;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: darkred;
+      }
+      .step-icon {
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color: #fff8f0;
+        font-size: 38px;
+      }
+      .step-content {
+        flex: 1;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      /* .command-button {
+        flex: 1;
+        padding: 10px;
+        background: #fefefe;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        text-align: left;
+        cursor: pointer;
+      } */
+      .command-button {
+        flex: 1;
+        padding: 10px 14px;
+        /* background: linear-gradient(to bottom, #fefefe 0%, #e6e6e6 100%); */
+        background: #fefefe;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: left;
+        cursor: pointer;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease;
+      }
+
+      .command-button:hover {
+        /* background: linear-gradient(to bottom, #ffffff 0%, #dcdcdc 100%); */
+        background: #dcdcdc;
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .command-button:active {
+        box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+        transform: translateY(1px);
+      }
+
+      .status {
+        min-width: 90px;
+        text-align: center;
+        background: #fff0d9;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        font-weight: bold;
+        box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .desc {
+        flex: 2;
+        font-size: 13px;
+      }
+      .back-button {
+        background: #ddd;
+        border: 1px solid #aaa;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="logo vertical-center">
+              <h1>技術資料等アップロードシステム</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tools vertical-right">
+              <input class="btn" type="button" name="" value="閉じる" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="screen-title">
+        <div class="row">
+          <div class="col-12">
+            <h1 style="text-align: center">データ追加登録</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-area">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="form-table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>0123456789</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td><a href="">案件名</a></td>
+              </tr>
+              <tr>
+                <th>対象申請書種別</th>
+                <td>入札書</td>
+              </tr>
+              <tr>
+                <th>対象資料種別</th>
+                <td>簡易技術資料</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-left">1</div>
+        <div class="step-icon">🏢</div>
+        <div class="step-content">
+          <button class="command-button" id="openWindow1">
+            入力条件の設定／会社情報の入力
+          </button>
+          <div class="status" style="color: blue">入力済み</div>
+          <div class="desc">
+            入力条件や対象工事の情報（名称・提出先・住所・電話番号など）を入力します。
+          </div>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-left">2</div>
+        <div class="step-icon">🧑‍💼</div>
+        <div class="step-content">
+          <button class="command-button" id="openWindow2">
+            同種（及び類似）工事の施工実績の入力
+          </button>
+          <div class="status">未入力</div>
+          <div class="desc">同種工事の施工実績（最大3件）を入力します。</div>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-left">3</div>
+        <div class="step-icon">👷</div>
+        <div class="step-content">
+          <button class="command-button" id="openWindow3">
+            配置予定技術者の資格及び工事経験の入力
+          </button>
+          <div class="status">未入力</div>
+          <div class="desc">
+            配置予定技術者の資格・工事経験などを入力します。最大10名まで可。
+          </div>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-left">4</div>
+        <div class="step-icon">💾</div>
+        <div class="step-content">
+          <button class="command-button" id="openWindow4">保存／印刷</button>
+          <div class="status">未出力</div>
+          <div class="desc">入力した情報の保存、印刷が行えます。</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function openPopup(url, name) {
+        const screenWidth = window.innerWidth; // 親ウィンドウの幅
+        const screenHeight = window.innerHeight; // 親ウィンドウの高さ
+        const screenX = window.screenX; // 親ウィンドウのX座標
+        const screenY = window.screenY; // 親ウィンドウのY座標
+        window.open(
+          url, // 開くウィンドウのURL
+          name, // ウィンドウ名
+          `width=${screenWidth},height=${screenHeight},left=${screenX},top=${screenY}` // 親ウィンドウと同じサイズ・位置
+        );
+      }
+
+      document
+        .getElementById("openWindow1")
+        .addEventListener("click", function () {
+          openPopup("child1.html", "会社情報");
+        });
+
+      document
+        .getElementById("openWindow2")
+        .addEventListener("click", function () {
+          openPopup("child2.html", "施工実績");
+        });
+
+      document
+        .getElementById("openWindow3")
+        .addEventListener("click", function () {
+          openPopup("child3.html", "技術者情報");
+        });
+
+      document
+        .getElementById("openWindow4")
+        .addEventListener("click", function () {
+          const url = "child4.html";
+          const name = "保存／印刷";
+          const features = "width=600,height=400,left=0,top=100";
+          window.open(url, name, features);
+        });
+    </script>
+  </body>
+</html>

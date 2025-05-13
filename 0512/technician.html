@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>配置予定技術者の資格</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        padding: 20px;
+        font-family: "MS UI Gothic", sans-serif;
+      }
+      .container {
+        background-color: #fff;
+        border: 2px solid #0033cc;
+        padding: 10px;
+        max-width: 900px;
+      }
+      fieldset {
+        background-color: #ffffcc;
+        border: 1px solid #aaa;
+        padding: 1em;
+        margin-bottom: 1em;
+      }
+      legend {
+        background-color: #3366ff;
+        color: #fff;
+        padding: 0.3em 0.8em;
+        font-weight: bold;
+      }
+      .form-group {
+        margin-bottom: 0.5em;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        background-color: #e0e0e0;
+        border: 1px solid #aaa;
+        padding: 5px;
+        vertical-align: top;
+      }
+      input[type="text"],
+      select {
+        padding: 5px;
+        border: 1px solid #aaa;
+      }
+      .note {
+        color: red;
+        margin-left: 160px;
+        font-size: 0.9em;
+      }
+      .radio-group {
+        margin-left: 160px;
+      }
+      .buttons {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .buttons button {
+        background-color: #ffffcc;
+        border: 1px solid #000;
+        padding: 0.5em 1em;
+        margin: 0 10px;
+      }
+      .highlight-green {
+        background-color: #ccffcc;
+      }
+      .highlight-yellow {
+        background-color: #ffffcc;
+      }
+      .highlight-pink {
+        background-color: #ffe0cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <fieldset>
+          <legend>配置予定技術者の資格</legend>
+
+          <div class="form-group">
+            <label>所属会社名</label>
+            <input type="text" value="■■■組" />
+          </div>
+
+          <div class="form-group">
+            <label>技術者区分</label>
+            <select>
+              <option>監理技術者</option>
+            </select>
+            <button type="button">その他資格</button>
+          </div>
+
+          <div class="form-group">
+            <label>氏名</label>
+            <input type="text" value="中国 太郎" />
+            <label>フリガナ</label>
+            <input type="text" value="チュウゴクタロウ" />
+          </div>
+
+          <div class="form-group">
+            <label>生年月日</label>
+            <select>
+              <option>昭和</option>
+            </select>
+            <input type="text" size="2" value="33" />年
+            <input type="text" size="2" value="9" />月
+            <input type="text" size="2" value="9" />日
+            <label>最終学歴</label>
+            <input type="text" value="〇〇〇〇大" />
+          </div>
+
+          <p class="note">※法令に基づく資格・免許の取得内容を入力</p>
+
+          <div class="form-group highlight-green">
+            <label>法令に基づく資格</label>
+            <input type="text" value="一級土木施工管理技士" />
+          </div>
+
+          <div class="form-group highlight-green">
+            <label>取得年月</label>
+            <select>
+              <option>昭和</option>
+            </select>
+            <input type="text" size="2" value="56" />年
+            <input type="text" size="2" value="1" />月
+            <label>登録番号</label>
+            <input type="text" value="0005509999" />
+          </div>
+
+          <p class="note">
+            ※配置予定者のうち監理技術者資格者証を提出する場合、登録番号を入力
+          </p>
+
+          <div class="form-group highlight-green">
+            <label>監理技術者証取得年月</label>
+            <select>
+              <option>平成</option>
+            </select>
+            <input type="text" size="2" value="11" />年
+            <input type="text" size="2" value="1" />月
+            <label>登録番号</label>
+            <input type="text" value="00059986" />
+          </div>
+
+          <p class="note">
+            ※監理技術者証番号の入力は、右ボタンより入力方法を参照の上、登録してください。
+          </p>
+
+          <div class="form-group">
+            <label>他工事の従事状況</label>
+            <div class="radio-group">
+              <label
+                ><input type="radio" name="work-status" checked /> 有り</label
+              >
+              <label><input type="radio" name="work-status" /> 無し</label>
+            </div>
+          </div>
+
+          <div class="form-group highlight-yellow">
+            <label>コメント</label>
+            <input type="text" size="60" />
+          </div>
+
+          <div class="buttons">
+            <button type="button">既に登録された技術者の複写</button>
+            <button type="button" onclick="alert('登録しました')">登録</button>
+            <button type="button">印刷イメージの確認</button>
+            <button type="button" onclick="window.close()">
+              予定技術者選択画面に戻る
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <script>
+      window.addEventListener("load", () => {
+        const margin = 20; // 小さな余白（必要なら調整）
+        const width = document.documentElement.scrollWidth + margin;
+        const height = document.documentElement.scrollHeight + margin;
+        window.resizeTo(width, height);
+      });
+    </script>
+  </body>
+</html>

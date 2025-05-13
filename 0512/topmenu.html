@@ -209,7 +209,11 @@
       document
         .getElementById("openWindow4")
         .addEventListener("click", function () {
-          openPopup("child4.html", "保存／印刷");
+          window.open(
+            "child4.html",
+            "保存／印刷",
+            "width=600,height=400,top=100,left=100"
+          );
         });
     </script>
   </body>
