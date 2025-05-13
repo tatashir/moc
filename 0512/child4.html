@@ -66,15 +66,16 @@
           以下の内容でよろしければ「印刷」または「提出」をクリックしてください。
         </p>
         <ul>
-          <li>対象工事名：○○工事</li>
-          <li>工事種別：一般土木工事</li>
-          <li>提出事務所：倉吉河川国道事務所</li>
+          <li>調達案件番号：0123456789</li>
+          <li>調達案件名称：案件名</li>
+          <li>対象申請書種別：入札書</li>
+          <li>対象資料種別：簡易技術資料</li>
           <!-- 必要な項目を追加 -->
         </ul>
       </div>
 
       <div class="buttons">
-        <button type="button" onclick="window.print()">印刷</button>
+        <button type="button" onclick="print()">印刷</button>
         <button type="button" id="submit-btn">提出</button>
         <button type="button" onclick="window.close()">戻る</button>
       </div>
@@ -90,6 +91,15 @@
             alert("提出が完了しました。");
           }
         });
+
+      function print() {
+        // print2.htmlを開く print2.htmlのscriptタグ内に、開かれたら即window.print()を実行するコードを仕込む
+        var printWindow = window.open(
+          "print2.html",
+          "_blank",
+          "width=800,height=600"
+        );
+      }
     </script>
   </body>
 </html>

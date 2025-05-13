@@ -163,7 +163,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button" id="technician-name">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -206,7 +210,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -247,7 +255,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -288,7 +300,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -329,7 +345,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -370,7 +390,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -411,7 +435,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -452,7 +480,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -493,7 +525,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -534,7 +570,11 @@
         <div class="section-content">
           <div class="left-column">
             <div class="row">
-              <button type="button" class="label-button">
+              <button
+                type="button"
+                class="label-button"
+                onclick="openTechDialog()"
+              >
                 氏名・資格等の入力
               </button>
               <div class="flex-inputs">
@@ -582,15 +622,16 @@
       <button onclick="window.close()">メニューに戻る</button>
     </div>
     <script>
-      document
-        .getElementById("technician-name")
-        .addEventListener("click", function () {
-          window.open(
-            "technician.html",
-            "技術者情報",
-            "width=400,height=400,top=100,left=100,resizable=yes"
-          );
-        });
+      function openTechDialog() {
+        const url = "technician.html";
+        const name = "tech";
+        const left = window.screenX + 50;
+        const top = window.screenY + 50;
+        const features = `width=auto,height=auto,top=${top},left=${left}`;
+        window.open(url, name, features);
+      }
+
+      document.getElementById("tech").addEventListener("click", openTechDialog);
     </script>
   </body>
 </html>

@@ -239,7 +239,9 @@
         window.open(
           url, // 開くウィンドウのURL
           name, // ウィンドウ名
-          `width=${screenWidth},height=${screenHeight},left=${screenX},top=${screenY}` // 親ウィンドウと同じサイズ・位置
+          `width=900px,height=${screenHeight},left=${screenX + 50},top=${
+            screenY + 50
+          }`
         );
       }
 

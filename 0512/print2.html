@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>データ確認画面</title>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .centered {
+        text-align: center;
+        margin: 30px 0;
+      }
+      .indent {
+        margin-top: 30px;
+        text-align: left;
+        margin-left: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div></div>
+        <div>2025年5月7日</div>
+      </div>
+
+      <div class="row">
+        <div>企業ID: 9000000000000275</div>
+        <div>データ確認画面</div>
+      </div>
+
+      <div class="row">
+        <div>企業名称: 株式会社テスト</div>
+        <div>代表者: 山田 太郎</div>
+      </div>
+
+      <div class="row">
+        <div>郵便番号: 123-4567</div>
+        <div>住所: 東京都新宿区1-2-3</div>
+      </div>
+
+      <div class="centered">
+        <h2>データ確認画面</h2>
+        <p>以下の内容をご確認ください。</p>
+      </div>
+
+      <div class="centered">基本情報</div>
+
+      <div class="indent">
+        <p>調達案件番号: 2102060001021059103000004</p>
+        <p>調達案件名称: テスト案件</p>
+        <p>対象申請書種別: 工事申請書</p>
+        <p>対象資料種別: 技術資料</p>
+      </div>
+
+      <div class="centered">会社情報</div>
+
+      <div class="indent">
+        <p>建設業許可番号: 123456</p>
+        <p>企業ID: 9000000000000275</p>
+        <p>企業名称: 株式会社テスト</p>
+        <p>郵便番号: 123-4567</p>
+        <p>住所: 東京都新宿区1-2-3</p>
+        <p>代表電話番号: 03-1234-5678</p>
+        <p>代表FAX番号: 03-1234-5679</p>
+        <p>代表者: 山田 太郎</p>
+        <p>作成者: 佐藤 花子</p>
+        <p>予算決算及び会計令第70条への該当: 該当</p>
+        <p>建設業退職金共済契約締結の有無: 有</p>
+        <p>同等の組合との締結の場合は組合名記述: テスト組合</p>
+        <p>etc</p>
+      </div>
+
+      <div class="centered" style="margin-top: 40px">
+        <p>確認日: 2025年5月7日</p>
+      </div>
+    </div>
+    <script>
+      // 開かれたら即window.print()を実行
+      window.onload = function () {
+        window.print();
+      };
+    </script>
+  </body>
+</html>

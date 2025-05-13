@@ -2,12 +2,14 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>配置予定技術者の資格</title>
     <style>
       body {
         background-color: #f0f0f0;
         padding: 20px;
         font-family: "MS UI Gothic", sans-serif;
+        max-width: 900px;
       }
       .container {
         background-color: #fff;
@@ -174,12 +176,10 @@
       </form>
     </div>
     <script>
-      window.addEventListener("load", () => {
-        const margin = 20; // 小さな余白（必要なら調整）
-        const width = document.documentElement.scrollWidth + margin;
-        const height = document.documentElement.scrollHeight + margin;
-        window.resizeTo(width, height);
-      });
+      // Check if the window is a popup and set its width to 900
+      if (window.opener && !window.opener.closed) {
+        window.resizeTo(900, 750);
+      }
     </script>
   </body>
 </html>
