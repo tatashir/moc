@@ -11,33 +11,6 @@
     <link rel="stylesheet" href="../styles/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="../styles/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="../styles/upsystem.css" />
-
-    <!-- フォントオーサムを読み込むか、Unicodeアイコンに置き換えてもOK -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <!-- <style>
-      .page-header {
-        background-color: #1f364f;
-        color: white;
-        padding: 1rem 0;
-        text-align: center;
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        border-radius: 0.5rem 0.5rem 0 0;
-      }
-      .card .btn-refresh {
-        position: absolute;
-        top: 0.75rem;
-        right: 0.75rem;
-        color: #6c757d;
-      }
-      .card {
-        border-radius: 0.5rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      }
-    </style> -->
   </head>
 
   <header class="header">
@@ -48,10 +21,8 @@
             <h1>技術資料等アップロードシステム</h1>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="tools vertical-right">
-            <input class="btn" type="button" name="" value="閉じる" />
-          </div>
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+          <input class="btn" type="button" value="閉じる" />
         </div>
       </div>
     </div>
@@ -66,7 +37,8 @@
           </div>
         </div>
       </div>
-      <div class="top-area">
+
+      <div class="top-area mb-4">
         <div class="row">
           <div class="col-lg-6">
             <table class="table">
@@ -86,85 +58,96 @@
           </div>
         </div>
       </div>
-      <!-- top-area -->
-      <div class="container" layout:fragment="contents">
-        <!-- 2×2 グリッドでカード表示 -->
-        <div class="row">
-          <!-- カード1: 施工実績 -->
-          <div class="col-md-6 mb-4 align-center">
-            <div class="card p-3 position-relative">
-              <h5 class="mb-3">同種（及び類似）工事の施工実績</h5>
 
-              <select class="form-control mb-3">
-                <option>選択してください</option>
-                <!-- 動的にオプション追加 -->
-              </select>
-              <button type="button" class="btn btn-outline-primary btn-block">
-                更新
-              </button>
-              <button type="button" class="btn btn-outline-primary btn-block">
-                新規作成
-              </button>
-            </div>
-          </div>
-
-          <!-- カード2: 資格 -->
-          <div class="col-md-6 mb-4 align-center">
-            <div class="card p-3 position-relative">
-              <h5 class="mb-3">配置予定技術者の資格</h5>
-
-              <select class="form-control mb-3">
-                <option>選択してください</option>
-              </select>
-              <button type="button" class="btn btn-outline-primary btn-block">
-                更新
-              </button>
-              <button type="button" class="btn btn-outline-primary btn-block">
-                新規作成
-              </button>
-            </div>
-          </div>
-
-          <!-- カード3: 工事経験 -->
-          <div class="col-md-6 mb-4 align-center">
-            <div class="card p-3 position-relative">
-              <h5 class="mb-3">配置予定技術者の工事経験</h5>
-
-              <select class="form-control mb-3">
-                <option>選択してください</option>
-              </select>
-              <button type="button" class="btn btn-outline-primary btn-block">
-                更新
-              </button>
-              <button type="button" class="btn btn-outline-primary btn-block">
-                新規作成
-              </button>
-            </div>
-          </div>
-
-          <!-- カード4: 従事状況 -->
-          <div class="col-md-6 mb-4 align-center">
-            <div class="card p-3 position-relative">
-              <h5 class="mb-3">配置予定技術者の他工事従事状況</h5>
-
-              <select class="form-control mb-3">
-                <option>選択してください</option>
-              </select>
-              <button type="button" class="btn btn-outline-primary btn-block">
-                更新
-              </button>
-              <button type="button" class="btn btn-outline-primary btn-block">
-                新規作成
-              </button>
-            </div>
+      <!-- ▼ 縦並びカード -->
+      <!-- 1. 施工実績 -->
+      <div class="row justify-content-center mb-4">
+        <div style="width: 100%">
+          <div class="p-3 align-center">
+            <h4 class="mb-3">同種（及び類似）工事の施工実績</h4>
+            <select class="form-control mb-3" style="width: 50%">
+              <option>選択してください</option>
+            </select>
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-block mb-2"
+            >
+              更新
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-block">
+              新規作成
+            </button>
           </div>
         </div>
+      </div>
 
-        <!-- 登録ボタン -->
-        <div class="row align-center">
-          <div class="col-12 text-center">
-            <button type="button" class="btn btn-primary btn-lg">登録</button>
+      <!-- 2. 資格 -->
+      <div class="row justify-content-center mb-4">
+        <div style="width: 100%">
+          <div class="p-3 align-center">
+            <h4 class="mb-3">配置予定技術者の資格</h4>
+            <select class="form-control mb-3" style="width: 50%">
+              <option>選択してください</option>
+            </select>
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-block mb-2"
+            >
+              更新
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-block">
+              新規作成
+            </button>
           </div>
+        </div>
+      </div>
+
+      <!-- 3. 工事経験 -->
+      <div class="row justify-content-center mb-4">
+        <div style="width: 100%">
+          <div class="p-3 align-center">
+            <h4 class="mb-3">配置予定技術者の工事経験</h4>
+            <select class="form-control mb-3" style="width: 50%">
+              <option>選択してください</option>
+            </select>
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-block mb-2"
+            >
+              更新
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-block">
+              新規作成
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 従事状況 -->
+      <div class="row justify-content-center mb-4">
+        <div style="width: 100%">
+          <div class="p-3 align-center">
+            <h4 class="mb-3">配置予定技術者の他工事従事状況</h4>
+            <select class="form-control mb-3" style="width: 50%">
+              <option>選択してください</option>
+            </select>
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-block mb-2"
+            >
+              更新
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-block">
+              新規作成
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 登録ボタン -->
+      <div class="row align-center">
+        <div class="col-12 text-center">
+          <button type="button" class="btn btn-primary btn-lg">登録</button>
         </div>
       </div>
     </div>
