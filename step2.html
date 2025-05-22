@@ -3,593 +3,294 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>データ追加登録</title>
+    <title>項目選択設定</title>
     <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
     <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
     <link rel="stylesheet" href=".//upsystem.css" />
     <style>
-      /* ナビゲーション部分のスタイル */
-      .contact__flow-area {
-        margin: 40px auto;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .form-table th {
+        text-align: left;
+        padding: 10px;
+        vertical-align: middle;
       }
-
-      .contact__flow-list {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* width: calc(100% / 3); */
-        width: calc(100% / 4);
-        height: 60px;
-        position: relative;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-      }
-
-      .contact__flow-area .box01 {
-        background: #fff;
-      }
-
-      .contact__flow-area .box02 {
-        /* background: #f2d8f2; */
-        background: rgb(187, 221, 255);
-        color: #000;
-      }
-
-      .contact__flow-area .box03 {
-        background: #fff;
-        color: #000;
-      }
-
-      .contact__flow-area .box04 {
-        background: #fff;
-        color: #000;
-      }
-
-      .contact__flow-area .box02:before,
-      .contact__flow-area .box03:before,
-      .contact__flow-area .box04:before,
-      .contact__flow-area .box04:after {
-        border-left: 20px solid #ffffff;
-        border-top: 30px solid transparent;
-        border-bottom: 30px solid transparent;
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-
-      .contact__flow-area .box02:before {
-        border-left-color: #fff;
-      }
-
-      .contact__flow-area .box02:after {
-        border-left-color: #fff;
-        left: -1px;
-        top: -1px;
-        z-index: 2;
-      }
-
-      .contact__flow-area .box03::before {
-        /* border-left-color: #f2d8f2; */
-        border-left-color: rgb(187, 221, 255);
-        left: 0;
-        top: -1px;
-        z-index: 1;
-      }
-
-      .contact__flow-area .box03:after {
-        border-left-color: #fff;
-        left: -1px;
-        top: -1px;
-        z-index: 2;
-      }
-
-      .contact__flow-area .box04::before {
-        border-left-color: #b4b4b4;
-        left: 0;
-        top: -1px;
-        z-index: 1;
-      }
-
-      .contact__flow-area .box04:after {
-        border-left-color: #fff;
-        left: -1px;
-        top: -1px;
-        z-index: 2;
-      }
-
-      .contact__title-number {
-        margin-bottom: 6px;
-        display: block;
+      .form-table td {
+        padding: 10px;
       }
     </style>
   </head>
   <body>
-    <header class="header">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="logo vertical-center">
-              <h1>技術資料等アップロードシステム</h1>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="tools vertical-right">
-              <input class="btn" type="button" name="" value="閉じる" />
-            </div>
-          </div>
+    <div class="container" style="width: 800px; margin-top: 40px">
+      <h1>管理者設定：表示項目選択</h1>
+      <form>
+        <table class="form-table" style="width: 100%">
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="同種工事の条件" />
+            </th>
+            <td>同種工事の条件</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="競争参加資格" />
+            </th>
+            <td>競争参加資格</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="同種性" />
+            </th>
+            <td>同種性</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="コリンズに記載されていない同種の工事"
+              />
+            </th>
+            <td>コリンズに記載されていない同種の工事</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="調達案件名称" />
+            </th>
+            <td>調達案件名称</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="工事成績評定点" />
+            </th>
+            <td>工事成績評定点</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="発注機関名" />
+            </th>
+            <td>発注機関名</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="発注年度" />
+            </th>
+            <td>発注年度</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="受注者名" />
+            </th>
+            <td>受注者名</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="施工場所" />
+            </th>
+            <td>施工場所</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="最終請負金額" />
+            </th>
+            <td>最終請負金額</td>
+          </tr>
+          <tr>
+            <th><input type="checkbox" name="use_item" value="工期" /></th>
+            <td>工期</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="工種区分" />
+            </th>
+            <td>工種区分</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="受注形態" />
+            </th>
+            <td>受注形態</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="出資比率" />
+            </th>
+            <td>出資比率</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="工事内容" />
+            </th>
+            <td>工事内容</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="CORINS登録番号" />
+            </th>
+            <td>CORINS登録番号</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="新技術の活用実績" />
+            </th>
+            <td>新技術の活用実績</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="優良工事表彰" />
+            </th>
+            <td>優良工事表彰</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="工事成績優秀企業認定"
+              />
+            </th>
+            <td>工事成績優秀企業認定</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="安全管理優良受注者表彰"
+              />
+            </th>
+            <td>安全管理優良受注者表彰</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="安全工事表彰" />
+            </th>
+            <td>安全工事表彰</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="生産性向上技術活用表彰"
+              />
+            </th>
+            <td>生産性向上技術活用表彰</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="社会貢献等表彰" />
+            </th>
+            <td>社会貢献等表彰</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="ICT人材育成推進企業認定"
+              />
+            </th>
+            <td>ICT人材育成推進企業認定</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="難工事指定対象工事"
+              />
+            </th>
+            <td>難工事指定対象工事</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="新しい担い手技術者の活用"
+              />
+            </th>
+            <td>新しい担い手技術者の活用</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="インフラDXの取組み実績"
+              />
+            </th>
+            <td>インフラDXの取組み実績</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="BCP認定の有無" />
+            </th>
+            <td>BCP認定の有無</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="カーボンニュートラルの取組実績"
+              />
+            </th>
+            <td>カーボンニュートラルの取組実績</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="新技術開発に関わる受賞企業"
+              />
+            </th>
+            <td>新技術開発に関わる受賞企業</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="災害時等における協定及び活動実績"
+              />
+            </th>
+            <td>災害時等における協定及び活動実績</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="橋梁補修工事実績" />
+            </th>
+            <td>橋梁補修工事実績</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="自社工場" />
+            </th>
+            <td>自社工場</td>
+          </tr>
+          <tr>
+            <th>
+              <input
+                type="checkbox"
+                name="use_item"
+                value="下請負者表彰の活用有無"
+              />
+            </th>
+            <td>下請負者表彰の活用有無</td>
+          </tr>
+          <tr>
+            <th>
+              <input type="checkbox" name="use_item" value="その他コメント" />
+            </th>
+            <td>その他コメント</td>
+          </tr>
+        </table>
+
+        <div style="margin-top: 20px; text-align: center">
+          <button type="submit" class="btn">設定を保存</button>
         </div>
-      </div>
-    </header>
-
-    <div class="container" layout:fragment="contents" style="width: 800px">
-      <div class="screen-title">
-        <div class="row">
-          <div class="col-12">
-            <h1>データ追加登録</h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="top-area">
-        <div class="row">
-          <div class="col-lg-6">
-            <table class="form-table">
-              <tr>
-                <th>調達案件番号</th>
-                <td>aaaaaa</td>
-              </tr>
-              <tr>
-                <th>調達案件名称</th>
-                <td>
-                  <a href="#">aaaaa</a>
-                </td>
-              </tr>
-              <tr>
-                <th>対象申請書種別</th>
-                <td>testtesttesttest</td>
-              </tr>
-              <tr>
-                <th>対象資料種別</th>
-                <td>testtesttesttest</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <main class="main">
-        <div class="container">
-          <div class="contact__flow-area">
-            <div class="box01 contact__flow-list">
-              <div class="contact__flow-list-content">
-                <span class="contact__title-number">STEP1</span>
-              </div>
-            </div>
-            <div class="box02 contact__flow-list">
-              <div class="contact__flow-list-content">
-                <span class="contact__title-number">STEP2</span>
-              </div>
-            </div>
-            <div class="box03 contact__flow-list">
-              <div class="contact__flow-list-content">
-                <span class="contact__title-number">STEP3</span>
-              </div>
-            </div>
-            <div class="box04 contact__flow-list">
-              <div class="contact__flow-list-content">
-                <span class="contact__title-number">STEP4</span>
-              </div>
-            </div>
-          </div>
-
-          <h2>同種（及び類似）工事の施工実績</h2>
-          <section>
-            <form>
-              <table class="form-table">
-                <tr>
-                  <th>同種工事の条件</th>
-                  <td><input type="text" name="similar_work_conditions" /></td>
-                </tr>
-                <tr>
-                  <th>競争参加資格</th>
-                  <td>
-                    <input type="text" name="competition_qualification" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>同種性</th>
-                  <td>
-                    <input type="checkbox" name="checkbox_1" />
-                    有
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    コリンズに記載されていない同種の工事（加算点）の項目・数量等に記載
-                  </th>
-                  <td><input type="text" name="collins_unlisted_work" /></td>
-                </tr>
-                <tr>
-                  <th>調達案件名称</th>
-                  <td><input type="text" name="procurement_name" /></td>
-                </tr>
-                <tr>
-                  <th>工事成績評定点</th>
-                  <td><input type="text" name="evaluation_score" /></td>
-                </tr>
-                <tr>
-                  <th>発注機関名</th>
-                  <td>
-                    <select id="yearDropdown" name="ordering_year">
-                      <option value="0">選択してください</option>
-                      <option value="1">発注機関名1</option>
-                      <option value="2">発注機関名2</option>
-                      <option value="3">発注機関名3</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>発注年度</th>
-                  <td>
-                    <select id="yearDropdown" name="ordering_year">
-                      <option value="0">選択してください</option>
-                      <option value="2025">2025</option>
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                      <option value="2020">2020</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>受注者名</th>
-                  <td><input type="text" name="contractor_name" /></td>
-                </tr>
-                <tr>
-                  <th>施工場所</th>
-                  <td><input type="text" name="construction_location" /></td>
-                </tr>
-                <tr>
-                  <th>最終請負金額(最終契約金額）</th>
-                  <td><input type="text" name="final_contract_amount" /></td>
-                </tr>
-                <tr>
-                  <th>工期</th>
-                  <td>
-                    <input type="date" name="construction_start_date" /> ~
-                    <input type="date" name="construction_end_date" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>工種区分</th>
-                  <td><input type="text" name="work_type" /></td>
-                </tr>
-                <tr>
-                  <th>受注形態</th>
-                  <td>
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="単体"
-                      />
-                      単体</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="経常ＪＶ"
-                      />
-                      経常ＪＶ</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="地域ＪＶ"
-                      />
-                      地域ＪＶ</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="特定ＪＶ甲型"
-                      />
-                      特定ＪＶ(甲型)</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="特定ＪＶ乙型"
-                      />
-                      特定ＪＶ(乙型)</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="中部"
-                      />
-                      中部</label
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <th>出資比率（ＪＶの場合）</th>
-                  <td>
-                    <input
-                      type="number"
-                      name="investment_ratio"
-                      min="0"
-                      max="100"
-                    />
-                    %
-                  </td>
-                </tr>
-                <tr>
-                  <th>工事内容</th>
-                  <td>
-                    <textarea
-                      name="work_content"
-                      rows="5"
-                      placeholder="例: 工事概要（構造物形式 規模・寸法等、架設方法、設計条件）"
-                    ></textarea>
-                  </td>
-                </tr>
-                <tr>
-                  <th>CORINS登録番号</th>
-                  <!-- ☐有　　  ☐無で選択させる -->
-                  <td>
-                    <div
-                      style="
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-                        margin-bottom: 10px;
-                      "
-                    >
-                      <label style="display: flex; align-items: center">
-                        <input
-                          type="checkbox"
-                          name="corins_registration"
-                          value="有"
-                        />
-                        有
-                      </label>
-                      <label style="display: flex; align-items: center">
-                        <input
-                          type="checkbox"
-                          name="corins_registration"
-                          value="無"
-                        />
-                        無
-                      </label>
-                    </div>
-                    <input
-                      type="number"
-                      name="corins_registration_number"
-                      maxlength="10"
-                      title="数字を入力してください"
-                      placeholder="例: 1234567890"
-                      required
-                      style="width: 100%"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th>新技術の活用実績</th>
-                  <td><input type="text" name="new_technology_usage" /></td>
-                </tr>
-                <tr>
-                  <th>優良工事表彰</th>
-                  <td><input type="text" name="excellent_work_award" /></td>
-                </tr>
-                <tr>
-                  <th>工事成績優秀企業認定</th>
-                  <td>
-                    <input type="text" name="excellent_company_certification" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>安全管理優良受注者表彰</th>
-                  <td><input type="text" name="safety_management_award" /></td>
-                </tr>
-                <tr>
-                  <th>安全工事表彰</th>
-                  <td><input type="text" name="safety_work_award" /></td>
-                </tr>
-                <tr>
-                  <th>生産性向上技術活用表彰</th>
-                  <td><input type="text" name="productivity_award" /></td>
-                </tr>
-                <tr>
-                  <th>社会貢献等表彰</th>
-                  <td>
-                    <input type="text" name="social_contribution_award" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>ICT人材育成推進企業認定</th>
-                  <td><input type="text" name="ict_certification" /></td>
-                </tr>
-                <tr>
-                  <th>難工事指定対象工事</th>
-                  <td><input type="text" name="difficult_work" /></td>
-                </tr>
-                <tr>
-                  <th>新しい担い手技術者の活用</th>
-                  <td><input type="text" name="new_technician_usage" /></td>
-                </tr>
-                <tr>
-                  <th>インフラDXの取り組み実績</th>
-                  <td><input type="text" name="infrastructure_dx" /></td>
-                </tr>
-                <tr>
-                  <th>ＢＣＰ認定の有無</th>
-                  <td><input type="text" name="bcp_certification" /></td>
-                </tr>
-                <tr>
-                  <th>カーボンニュートラルの取組実績</th>
-                  <td><input type="text" name="carbon_neutral" /></td>
-                </tr>
-                <tr>
-                  <th>新技術開発に関わる受賞企業</th>
-                  <td><input type="text" name="new_technology_award" /></td>
-                </tr>
-                <tr>
-                  <th>災害時等における協定及び活動実績</th>
-                  <td><input type="text" name="disaster_agreement" /></td>
-                </tr>
-                <tr>
-                  <th>橋梁補修工事実績</th>
-                  <td><input type="text" name="bridge_repair" /></td>
-                </tr>
-                <tr>
-                  <th>自社工場</th>
-                  <td><input type="text" name="own_factory" /></td>
-                </tr>
-                <tr>
-                  <th>優良工事における下請負者表彰の活用の有無</th>
-                  <td><input type="text" name="subcontractor_award" /></td>
-                </tr>
-                <tr>
-                  <th>その他コメント</th>
-                  <td><textarea name="additional_comments"></textarea></td>
-                </tr>
-              </table>
-              <!-- divider -->
-              <div
-                style="height: 1px; background-color: #ccc; margin: 20px 0"
-              ></div>
-              <h2>サンプル</h2>
-              <table class="form-table">
-                <!-- 入力数1 -->
-                <tr>
-                  <th>入力数1</th>
-                  <td>
-                    <input
-                      type="text"
-                      name="single_input"
-                      placeholder="1つの入力"
-                    />
-                  </td>
-                </tr>
-
-                <!-- 入力数2 -->
-                <tr>
-                  <th>入力数2</th>
-                  <td>
-                    <input type="text" name="input_1" placeholder="入力1" />
-                    <input type="text" name="input_2" placeholder="入力2" />
-                  </td>
-                </tr>
-
-                <!-- チェックボックス -->
-                <tr>
-                  <th>チェックボックス</th>
-                  <td>
-                    <label
-                      ><input type="checkbox" name="checkbox_1" />
-                      オプション1</label
-                    ><br />
-                    <label
-                      ><input type="checkbox" name="checkbox_2" />
-                      オプション2</label
-                    ><br />
-                    <label
-                      ><input type="checkbox" name="checkbox_3" />
-                      オプション3</label
-                    >
-                  </td>
-                </tr>
-
-                <!-- プルダウン選択 -->
-                <tr>
-                  <th>プルダウン選択</th>
-                  <td>
-                    <select name="dropdown">
-                      <option value="option1">選択肢1</option>
-                      <option value="option2">選択肢2</option>
-                      <option value="option3">選択肢3</option>
-                    </select>
-                  </td>
-                </tr>
-
-                <!-- 添付資料の追加（任意） -->
-                <tr>
-                  <th>添付資料の追加（任意）</th>
-                  <td>
-                    <input type="file" name="attachment" />
-                  </td>
-                </tr>
-
-                <!-- 必須・任意 -->
-                <tr>
-                  <th>必須項目</th>
-                  <td>
-                    <input
-                      type="text"
-                      name="required_field"
-                      required
-                      placeholder="必須項目"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th>任意項目</th>
-                  <td>
-                    <input
-                      type="text"
-                      name="optional_field"
-                      placeholder="任意項目"
-                    />
-                  </td>
-                </tr>
-
-                <tr>
-                  <th>電入情報の有無</th>
-                  <td>
-                    <label
-                      ><input type="radio" name="electric_info" value="yes" />
-                      有</label
-                    >
-                    <label
-                      ><input type="radio" name="electric_info" value="no" />
-                      無</label
-                    >
-                  </td>
-                </tr>
-              </table>
-            </form>
-          </section>
-          <div
-            class="text-center"
-            style="
-              margin: 20px 0 20px 0;
-              display: flex;
-              justify-content: space-between;
-            "
-          >
-            <a href="step1.html" class="btn" style="text-decoration: none"
-              >戻る</a
-            >
-            <a class="btn" style="text-decoration: none">一時保存 </a>
-            <a href="step3.html" class="btn" style="text-decoration: none"
-              >次へ</a
-            >
-          </div>
-        </div>
-      </main>
+      </form>
     </div>
   </body>
 </html>

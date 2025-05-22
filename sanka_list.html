@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="./bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="./upsystem.css" />
+  </head>
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="logo vertical-center">
+            <h1>技術資料等アップロードシステム</h1>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tools vertical-right">
+            <input class="btn" type="button" name="" value="閉じる" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="container" layout:fragment="contents">
+      <div class="screen-title">
+        <div class="row">
+          <div class="col-12 align-center">
+            <h2>調達案件一覧</h2>
+          </div>
+        </div>
+      </div>
+      <!-- screen-title -->
+
+      <div class="breadcrumbs">
+        <div class="row">
+          <div class="col-12">
+            <ul>
+              <li>
+                <a href="">調達案件の表示</a>
+              </li>
+              <li>調達案件一覧</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- breadcrumb -->
+
+      <div class="top-area">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>00000000</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td>A案件</td>
+              </tr>
+              <tr>
+                <th>事務所</th>
+                <td>総務部契約課</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- top-area -->
+
+      <div class="bottom-area">
+        <div class="row list-controll">
+          <div class="col-12 align-right">
+            <div class="btn-group">
+              <input
+                class="btn"
+                type="button"
+                name=""
+                value="前ページ"
+                disabled
+              />
+              <input class="btn" type="button" name="" value="再表示" />
+              <input class="btn" type="button" name="" value="次ページ" />
+            </div>
+            <div class="controll-message">
+              <p>全1件中、1-10件を表示しています。</p>
+              <p>最終更新日時：2023年XXXX</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row result-list">
+          <div class="col-12">
+            <table>
+              <tr class="align-center">
+                <th width="4%">No.</th>
+                <th width="10%">業者数</th>
+                <th width="20%">調達案件番号</th>
+                <th width="21%">調達案件名称</th>
+                <th width="10%">事務所</th>
+                <th width="16%">入札方式</th>
+                <th width="9%">工事種別</th>
+                <th width="12%">参加申請様式</th>
+              </tr>
+              <tr class="align-center">
+                <td>1</td>
+                <td><a href="#">5業者参加</a></td>
+                <td>00000000</td>
+                <td><a href="#">ダミーA案件</a></td>
+                <td>総務部契約課</td>
+                <td>簡易公募型</td>
+                <td>測量</td>
+                <td><a href="./yousiki-test.html">表示</a></td>
+              </tr>
+              <tr class="align-center">
+                <td>2</td>
+                <td><a href="#">3業者参加</a></td>
+                <td>00000001</td>
+                <td><a href="#">ダミーB案件</a></td>
+                <td>技術部設計課</td>
+                <td>一般競争</td>
+                <td>設計</td>
+                <td><a href="./yousiki-test.html">表示</a></td>
+              </tr>
+              <tr class="align-center">
+                <td>3</td>
+                <td><a href="#">4業者参加</a></td>
+                <td>00000002</td>
+                <td><a href="#">ダミーC案件</a></td>
+                <td>工事部施工課</td>
+                <td>指名競争</td>
+                <td>施工</td>
+                <td><a href="./yousiki-test.html">表示</a></td>
+              </tr>
+              <tr class="align-center">
+                <td>4</td>
+                <td><a href="#">2業者参加</a></td>
+                <td>00000003</td>
+                <td><a href="#">ダミーD案件</a></td>
+                <td>管理部管理課</td>
+                <td>随意契約</td>
+                <td>管理</td>
+                <td><a href="./yousiki-test.html">表示</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
