@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>データ追加登録</title>
-    <link rel="stylesheet" href=".//bootstrap-reboot.min.css" />
-    <link rel="stylesheet" href=".//bootstrap-grid.min.css" />
-    <link rel="stylesheet" href=".//upsystem.css" />
+    <link rel="stylesheet" href="../styles/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="../styles/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../styles/upsystem.css" />
     <style>
+      #dataDisplay {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+      }
+
       /* ナビゲーション部分のスタイル */
       .contact__flow-area {
         margin: 40px auto;
@@ -31,7 +38,7 @@
       }
 
       .contact__flow-area .box01 {
-        background: rgb(187, 221, 255);
+        background: #fff;
       }
 
       .contact__flow-area .box02 {
@@ -40,7 +47,7 @@
       }
 
       .contact__flow-area .box03 {
-        background: #fff;
+        background: rgb(187, 221, 255);
         color: #000;
       }
 
@@ -50,8 +57,8 @@
       }
 
       .contact__flow-area .box02:before,
+      .contact__flow-area .box02:after,
       .contact__flow-area .box03:before,
-      .contact__flow-area .box03:after,
       .contact__flow-area .box04:before,
       .contact__flow-area .box04:after {
         border-left: 20px solid #ffffff;
@@ -64,7 +71,10 @@
       }
 
       .contact__flow-area .box02:before {
-        border-left-color: rgb(187, 221, 255);
+        border-left-color: #b4b4b4;
+        left: 0;
+        top: -1px;
+        z-index: 1;
       }
 
       .contact__flow-area .box02:after {
@@ -75,7 +85,9 @@
       }
 
       .contact__flow-area .box03::before {
-        border-left-color: #b4b4b4;
+        /* border-left-color: #f2d8f2; */
+        /* border-left-color: rgb(187, 221, 255); */
+        border-left-color: #fff;
         left: 0;
         top: -1px;
         z-index: 1;
@@ -89,14 +101,14 @@
       }
 
       .contact__flow-area .box04::before {
-        border-left-color: #b4b4b4;
+        border-left-color: rgb(187, 221, 255);
         left: 0;
         top: -1px;
         z-index: 1;
       }
 
       .contact__flow-area .box04:after {
-        border-left-color: #fff;
+        border-left-color: rgb(187, 221, 255);
         left: -1px;
         top: -1px;
         z-index: 2;
@@ -187,126 +199,95 @@
             </div>
           </div>
 
-          <h2>基本情報の入力</h2>
-          <section>
-            <h2 style="text-align: left">技術資料入力条件の設定</h2>
-            <form>
-              <table class="form-table">
-                <tr>
-                  <th>調達案件名称</th>
-                  <td>
-                    <input type="text" name="procurement_name" required />
-                  </td>
-                </tr>
-                <tr>
-                  <th>工種区分</th>
-                  <td><input type="text" name="work_type" required /></td>
-                </tr>
-                <tr>
-                  <th>企業体名称</th>
-                  <td><input type="text" name="entity_name" required /></td>
-                </tr>
-                <tr>
-                  <th>対象工事への参加区分</th>
-                  <td>
-                    <select name="participation_type">
-                      <option value="single">単体企業</option>
-                      <option value="joint">共同企業体</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>事務所名</th>
-                  <td><input type="text" name="office_name" required /></td>
-                </tr>
-                <tr>
-                  <th>同種工事の条件</th>
-                  <td>
-                    <textarea
-                      name="similar_work_conditions"
-                      required
-                    ></textarea>
-                  </td>
-                </tr>
-                <tr>
-                  <th>企業能力評価型</th>
-                  <td><input type="checkbox" name="evaluation_type" /></td>
-                </tr>
-              </table>
-            </form>
-          </section>
+          <h2>配置予定技術者の資格及び工事経験</h2>
+          <div class="large-button" style="margin-top: 20px">
+            <button
+              style="
+                height: auto;
+                width: 100%;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                font-size: 18px;
+                cursor: pointer;
+                position: relative;
+                background-color: rgb(255, 255, 204);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              "
+            >
+              <span
+                style="
+                  /* position: absolute; */
+                  left: 50%;
+                  transform: translateX(-50%);
+                "
+                >配置予定技術者の資格</span
+              >
+              <span
+                style="
+                  position: absolute;
+                  right: 20px;
+                  color: green;
+                  font-weight: bold;
+                  padding: 0 10px;
+                  border: 1px solid green;
+                  background-color: #fff;
+                "
+                >入力済 ✔</span
+              >
+            </button>
+          </div>
+          <div class="large-button" style="margin-top: 20px">
+            <button
+              style="
+                width: 100%;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                font-size: 18px;
+                cursor: pointer;
+                position: relative;
+                background-color: rgb(255, 255, 204);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              "
+            >
+              <span style="left: 50%; transform: translateX(-50%)"
+                >配置予定技術者の工事経験</span
+              >
 
-          <section>
-            <h2 style="text-align: left">会社情報</h2>
-            <form>
-              <table class="form-table">
-                <tr>
-                  <th>建設業許可番号</th>
-                  <td>
-                    <input
-                      type="text"
-                      name="license_number"
-                      pattern="\d{6}"
-                      required
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th>企業ID</th>
-                  <td><input type="text" name="company_id" required /></td>
-                </tr>
-                <tr>
-                  <th>企業名称</th>
-                  <td><input type="text" name="company_name" required /></td>
-                </tr>
-                <tr>
-                  <th>企業郵便番号</th>
-                  <td><input type="text" name="postal_code" required /></td>
-                </tr>
-                <tr>
-                  <th>企業住所</th>
-                  <td><input type="text" name="address" required /></td>
-                </tr>
-                <tr>
-                  <th>代表電話番号</th>
-                  <td><input type="tel" name="phone_number" required /></td>
-                </tr>
-                <tr>
-                  <th>代表FAX番号</th>
-                  <td><input type="tel" name="fax_number" required /></td>
-                </tr>
-                <tr>
-                  <th>代表者（ICカード取得者氏名）</th>
-                  <td>
-                    <input type="text" name="representative_name" required />
-                  </td>
-                </tr>
-                <tr>
-                  <th>作成者（連絡先氏名）</th>
-                  <td><input type="text" name="creator_name" required /></td>
-                </tr>
-                <tr>
-                  <th>予算決算及び会計令第70条への該当</th>
-                  <td>
-                    <input type="checkbox" name="budget_compliance" required />
-                  </td>
-                </tr>
-                <tr>
-                  <th>建設業退職金共済契約締結の有無</th>
-                  <td>
-                    <select name="retirement_contract" required>
-                      <option value="yes">有</option>
-                      <option value="no">無</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>同等の組合との締結の<br />場合は組合名記述</th>
-                  <td><input type="text" name="other_union_name" /></td>
-                </tr>
-              </table>
-            </form>
-          </section>
+              <span
+                style="
+                  position: absolute;
+                  right: 20px;
+                  color: green;
+                  font-weight: bold;
+                  padding: 0 10px;
+                  border: 1px solid green;
+                  background-color: #fff;
+                "
+                >入力済 ✔</span
+              >
+            </button>
+          </div>
+          <div class="large-button" style="margin-top: 20px">
+            <button
+              style="
+                width: 100%;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                font-size: 18px;
+                cursor: pointer;
+                position: relative;
+                background-color: rgb(255, 255, 204);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              "
+            >
+              <span style="left: 50%; transform: translateX(-50%)"
+                >配置予定技術者の他工事の従事状況</span
+              >
+            </button>
+          </div>
           <div
             class="text-center"
             style="
@@ -315,14 +296,49 @@
               justify-content: space-between;
             "
           >
-            <a class="btn" style="text-decoration: none">戻る</a>
-            <a class="btn" style="text-decoration: none">一時保存 </a>
             <a href="step2.html" class="btn" style="text-decoration: none"
+              >戻る</a
+            >
+            <a class="btn" style="text-decoration: none">一時保存 </a>
+            <a href="step4.html" class="btn" style="text-decoration: none"
               >次へ</a
             >
           </div>
         </div>
       </main>
     </div>
+
+    <script>
+      document
+        .getElementById("openWindow1")
+        .addEventListener("click", function () {
+          const screenWidth = window.screen.width; // 画面の幅
+          const screenHeight = window.screen.height; // 画面の高さ
+          window.open(
+            "child1.html", // 開くウィンドウのURL
+            "資格", // ウィンドウ名
+            `width=${screenWidth},height=${screenHeight},top=0,left=0` // フルスクリーンサイズ
+          );
+        });
+
+      document
+        .getElementById("openWindow2")
+        .addEventListener("click", function () {
+          window.open("child2.html", "工事経験", "width=800,height=600");
+        });
+
+      document
+        .getElementById("openWindow3")
+        .addEventListener("click", function () {
+          window.open("child3.html", "従事状況", "width=800,height=600");
+        });
+
+      // 子ウィンドウからデータを受け取る関数
+      window.receiveData = function (data) {
+        document.getElementById(
+          "dataDisplay"
+        ).textContent = `受け取ったデータ: ${data}`;
+      };
+    </script>
   </body>
 </html>
