@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html
+  lang="ja"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/UC01_OrdLayout}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>参加申請様式の設定</title>
+
+    <link rel="stylesheet" href="../styles/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="../styles/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../styles/upsystem.css" />
+
+    <style>
+      .form-table th {
+        text-align: left;
+        padding: 10px;
+        vertical-align: middle;
+      }
+      .form-table td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="logo vertical-center">
+            <h1>技術資料等アップロードシステム</h1>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+          <input class="btn" type="button" value="閉じる" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body>
+    <div class="container" layout:fragment="contents">
+      <!-- 参加申請様式の設定 -->
+      <div class="screen-title mb-4">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2>参加申請様式の設定</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-area mb-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>00000000</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td>A案件</td>
+              </tr>
+              <tr>
+                <th>事務所</th>
+                <td>総務部契約課</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 管理者設定：表示項目選択 -->
+      <div class="admin-settings mb-5">
+        <h2 class="align-center mb-4">参加申請様式の設定</h2>
+        <h3 class="align-center mb-4">同種（及び類似）工事の施工実績</h3>
+        <form>
+          <table class="form-table" style="width: 100%">
+            <colgroup>
+              <col style="width: 10%" />
+              <col style="width: 90%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>選択</th>
+                <th style="text-align: left">表示項目</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                  <input
+                    type="checkbox"
+                    name="use_item"
+                    value="同種工事の条件"
+                  />
+                </th>
+                <td>同種工事の条件</td>
+              </tr>
+              <tr>
+                <th>
+                  <input type="checkbox" name="use_item" value="競争参加資格" />
+                </th>
+                <td>競争参加資格</td>
+              </tr>
+              <tr>
+                <th>
+                  <input type="checkbox" name="use_item" value="同種性" />
+                </th>
+                <td>同種性</td>
+              </tr>
+              <tr>
+                <th>
+                  <input
+                    type="checkbox"
+                    name="use_item"
+                    value="コリンズに記載されていない同種の工事"
+                  />
+                </th>
+                <td>コリンズに記載されていない同種の工事</td>
+              </tr>
+              <!-- 以下、他のチェックボックスも同様に -->
+              <tr>
+                <th>
+                  <input type="checkbox" name="use_item" value="調達案件名称" />
+                </th>
+                <td>調達案件名称</td>
+              </tr>
+              <tr>
+                <th>
+                  <input
+                    type="checkbox"
+                    name="use_item"
+                    value="工事成績評定点"
+                  />
+                </th>
+                <td>工事成績評定点</td>
+              </tr>
+              <!-- （省略） -->
+              <tr>
+                <th>
+                  <input
+                    type="checkbox"
+                    name="use_item"
+                    value="その他コメント"
+                  />
+                </th>
+                <td>その他コメント</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="align-center" style="margin-top: 20px">
+            <button type="submit" class="btn btn-primary">設定を保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
