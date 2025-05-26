@@ -2,11 +2,34 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>データ追加登録</title>
+    <title>参加申請様式の設定</title>
     <link rel="stylesheet" href="../styles/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="../styles/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="../styles/upsystem.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .settings-table,
+      .preview-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 40px;
+      }
+      .settings-table th,
+      .settings-table td,
+      .preview-table th,
+      .preview-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      .section-title {
+        font-size: 1.2em;
+        margin: 20px 0 10px;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <header class="header">
     <div class="container-fluid">
@@ -16,10 +39,8 @@
             <h1>技術資料等アップロードシステム</h1>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="tools vertical-right">
-            <input class="btn" type="button" name="" value="閉じる" />
-          </div>
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+          <input class="btn" type="button" value="閉じる" />
         </div>
       </div>
     </div>
@@ -55,410 +76,288 @@
         </div>
       </div>
 
-      <main class="main">
-        <div class="container">
-          <h2>同種（及び類似）工事の施工実績</h2>
-          <section>
-            <form>
-              <table class="form-table">
-                <tr>
-                  <th>同種工事の条件</th>
-                  <td><input type="text" name="similar_work_conditions" /></td>
-                </tr>
-                <tr>
-                  <th>競争参加資格</th>
-                  <td>
-                    <input type="text" name="competition_qualification" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>同種性</th>
-                  <td>
-                    <input type="checkbox" name="checkbox_1" />
-                    有
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    コリンズに記載されていない同種の工事（加算点）の項目・数量等に記載
-                  </th>
-                  <td><input type="text" name="collins_unlisted_work" /></td>
-                </tr>
-                <tr>
-                  <th>調達案件名称</th>
-                  <td><input type="text" name="procurement_name" /></td>
-                </tr>
-                <tr>
-                  <th>工事成績評定点</th>
-                  <td><input type="text" name="evaluation_score" /></td>
-                </tr>
-                <tr>
-                  <th>発注機関名</th>
-                  <td>
-                    <select id="yearDropdown" name="ordering_year">
-                      <option value="0">選択してください</option>
-                      <option value="1">発注機関名1</option>
-                      <option value="2">発注機関名2</option>
-                      <option value="3">発注機関名3</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>発注年度</th>
-                  <td>
-                    <select id="yearDropdown" name="ordering_year">
-                      <option value="0">選択してください</option>
-                      <option value="2025">2025</option>
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                      <option value="2020">2020</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>受注者名</th>
-                  <td><input type="text" name="contractor_name" /></td>
-                </tr>
-                <tr>
-                  <th>施工場所</th>
-                  <td><input type="text" name="construction_location" /></td>
-                </tr>
-                <tr>
-                  <th>最終請負金額(最終契約金額）</th>
-                  <td><input type="text" name="final_contract_amount" /></td>
-                </tr>
-                <tr>
-                  <th>工期</th>
-                  <td>
-                    <input type="date" name="construction_start_date" /> ~
-                    <input type="date" name="construction_end_date" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>工種区分</th>
-                  <td><input type="text" name="work_type" /></td>
-                </tr>
-                <tr>
-                  <th>受注形態</th>
-                  <td>
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="単体"
-                      />
-                      単体</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="経常ＪＶ"
-                      />
-                      経常ＪＶ</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="地域ＪＶ"
-                      />
-                      地域ＪＶ</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="特定ＪＶ甲型"
-                      />
-                      特定ＪＶ(甲型)</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="特定ＪＶ乙型"
-                      />
-                      特定ＪＶ(乙型)</label
-                    ><br />
-                    <label
-                      ><input
-                        type="checkbox"
-                        name="contract_type"
-                        value="中部"
-                      />
-                      中部</label
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <th>出資比率（ＪＶの場合）</th>
-                  <td>
-                    <input
-                      type="number"
-                      name="investment_ratio"
-                      min="0"
-                      max="100"
-                    />
-                    %
-                  </td>
-                </tr>
-                <tr>
-                  <th>工事内容</th>
-                  <td>
-                    <textarea
-                      name="work_content"
-                      rows="5"
-                      placeholder="例: 工事概要（構造物形式 規模・寸法等、架設方法、設計条件）"
-                    ></textarea>
-                  </td>
-                </tr>
-                <tr>
-                  <th>CORINS登録番号</th>
-                  <!-- ☐有　　  ☐無で選択させる -->
-                  <td>
-                    <div
-                      style="
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-                        margin-bottom: 10px;
-                      "
-                    >
-                      <label style="display: flex; align-items: center">
-                        <input
-                          type="checkbox"
-                          name="corins_registration"
-                          value="有"
-                        />
-                        有
-                      </label>
-                      <label style="display: flex; align-items: center">
-                        <input
-                          type="checkbox"
-                          name="corins_registration"
-                          value="無"
-                        />
-                        無
-                      </label>
-                    </div>
-                    <input
-                      type="number"
-                      name="corins_registration_number"
-                      maxlength="10"
-                      title="数字を入力してください"
-                      placeholder="例: 1234567890"
-                      required
-                      style="width: 100%"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th>新技術の活用実績</th>
-                  <td><input type="text" name="new_technology_usage" /></td>
-                </tr>
-                <tr>
-                  <th>優良工事表彰</th>
-                  <td><input type="text" name="excellent_work_award" /></td>
-                </tr>
-                <tr>
-                  <th>工事成績優秀企業認定</th>
-                  <td>
-                    <input type="text" name="excellent_company_certification" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>安全管理優良受注者表彰</th>
-                  <td><input type="text" name="safety_management_award" /></td>
-                </tr>
-                <tr>
-                  <th>安全工事表彰</th>
-                  <td><input type="text" name="safety_work_award" /></td>
-                </tr>
-                <tr>
-                  <th>生産性向上技術活用表彰</th>
-                  <td><input type="text" name="productivity_award" /></td>
-                </tr>
-                <tr>
-                  <th>社会貢献等表彰</th>
-                  <td>
-                    <input type="text" name="social_contribution_award" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>ICT人材育成推進企業認定</th>
-                  <td><input type="text" name="ict_certification" /></td>
-                </tr>
-                <tr>
-                  <th>難工事指定対象工事</th>
-                  <td><input type="text" name="difficult_work" /></td>
-                </tr>
-                <tr>
-                  <th>新しい担い手技術者の活用</th>
-                  <td><input type="text" name="new_technician_usage" /></td>
-                </tr>
-                <tr>
-                  <th>インフラDXの取り組み実績</th>
-                  <td><input type="text" name="infrastructure_dx" /></td>
-                </tr>
-                <tr>
-                  <th>ＢＣＰ認定の有無</th>
-                  <td><input type="text" name="bcp_certification" /></td>
-                </tr>
-                <tr>
-                  <th>カーボンニュートラルの取組実績</th>
-                  <td><input type="text" name="carbon_neutral" /></td>
-                </tr>
-                <tr>
-                  <th>新技術開発に関わる受賞企業</th>
-                  <td><input type="text" name="new_technology_award" /></td>
-                </tr>
-                <tr>
-                  <th>災害時等における協定及び活動実績</th>
-                  <td><input type="text" name="disaster_agreement" /></td>
-                </tr>
-                <tr>
-                  <th>橋梁補修工事実績</th>
-                  <td><input type="text" name="bridge_repair" /></td>
-                </tr>
-                <tr>
-                  <th>自社工場</th>
-                  <td><input type="text" name="own_factory" /></td>
-                </tr>
-                <tr>
-                  <th>優良工事における下請負者表彰の活用の有無</th>
-                  <td><input type="text" name="subcontractor_award" /></td>
-                </tr>
-                <tr>
-                  <th>その他コメント</th>
-                  <td><textarea name="additional_comments"></textarea></td>
-                </tr>
-              </table>
-              <!-- divider -->
-              <div
-                style="height: 1px; background-color: #ccc; margin: 20px 0"
-              ></div>
-              <h2>サンプル</h2>
-              <table class="form-table">
-                <!-- 入力数1 -->
-                <tr>
-                  <th>入力数1</th>
-                  <td>
-                    <input
-                      type="text"
-                      name="single_input"
-                      placeholder="1つの入力"
-                    />
-                  </td>
-                </tr>
+      <div class="section-title">
+        項目ごとの表示設定：同種（及び類似）工事の施工実績
+      </div>
+      <table class="form-table" style="padding-left: 20px; padding-right: 20px">
+        <colgroup>
+          <col style="width: 8%" />
+          <col style="width: 92%" />
+        </colgroup>
+        <tr>
+          <th style="text-align: center">表示</th>
+          <th style="text-align: center">項目名</th>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>同種工事の条件</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>競争参加資格</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>同種性</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>コリンズ未記載項目</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>調達案件名称</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工事成績評定点</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>発注機関名</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>発注年度</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>受注者名</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>施工場所</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>最終請負金額</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工期</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工種区分</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>受注形態</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>出資比率</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工事内容</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>CORINS登録番号</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>新技術の活用実績</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>優良工事表彰</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>優秀企業認定</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>安全管理表彰</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>安全工事表彰</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>生産性向上表彰</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>社会貢献表彰</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>ICT人材育成認定</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>難工事指定</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>新しい担い手活用</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>インフラDX</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>BCP認定</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>カーボンニュートラル取組</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>新技術開発表彰</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>災害協定・活動</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>橋梁補修実績</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>自社工場</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>下請負者表彰活用</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>その他コメント</td>
+        </tr>
+      </table>
 
-                <!-- 入力数2 -->
-                <tr>
-                  <th>入力数2</th>
-                  <td>
-                    <input type="text" name="input_1" placeholder="入力1" />
-                    <input type="text" name="input_2" placeholder="入力2" />
-                  </td>
-                </tr>
+      <div class="section-title">添付ファイルの設定</div>
+      <div class="align-center mb-3">
+        <label style="margin-right: 20px">
+          <input
+            type="radio"
+            name="file_requirement"
+            value="required"
+            checked
+          />
+          この様式で添付ファイルを要求する
+        </label>
+        <label>
+          <input type="radio" name="file_requirement" value="not_required" />
+          この様式で添付ファイルを要求しない
+        </label>
+      </div>
+      <table class="form-table" style="padding-left: 20px; padding-right: 20px">
+        <thead>
+          <tr>
+            <th style="width: 8%; text-align: left"></th>
+            <th style="width: 80%; text-align: left">ファイル名</th>
+            <th style="width: 12%; text-align: center">
+              <!-- <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  font-size: 18px;
+                  /* background: #f0f0f0; */
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="行を追加"
+              >
+                提出ファイルを追加
+              </button> -->
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center">1</td>
+            <td>証明書.pdf</td>
+            <td style="text-align: center">
+              <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  font-size: 16px;
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="この行を削除"
+              >
+                削除
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">2</td>
+            <td>設計図.dwg</td>
+            <td style="text-align: center">
+              <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  font-size: 16px;
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="この行を削除"
+              >
+                削除
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">3</td>
+            <td>
+              <input
+                type="text"
+                name="file_name_3"
+                placeholder="例：参考資料.xlsx"
+                style="width: 100%"
+              />
+            </td>
+            <td style="text-align: center">
+              <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  font-size: 16px;
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="この行を削除"
+              >
+                削除
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="text-align: center">
+              <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  background: #e0f3ff;
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="行を追加"
+              >
+                追加
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-                <!-- チェックボックス -->
-                <tr>
-                  <th>チェックボックス</th>
-                  <td>
-                    <label
-                      ><input type="checkbox" name="checkbox_1" />
-                      オプション1</label
-                    ><br />
-                    <label
-                      ><input type="checkbox" name="checkbox_2" />
-                      オプション2</label
-                    ><br />
-                    <label
-                      ><input type="checkbox" name="checkbox_3" />
-                      オプション3</label
-                    >
-                  </td>
-                </tr>
-
-                <!-- プルダウン選択 -->
-                <tr>
-                  <th>プルダウン選択</th>
-                  <td>
-                    <select name="dropdown">
-                      <option value="option1">選択肢1</option>
-                      <option value="option2">選択肢2</option>
-                      <option value="option3">選択肢3</option>
-                    </select>
-                  </td>
-                </tr>
-
-                <!-- 添付資料の追加（任意） -->
-                <tr>
-                  <th>添付資料の追加（任意）</th>
-                  <td>
-                    <input type="file" name="attachment" />
-                  </td>
-                </tr>
-
-                <!-- 必須・任意 -->
-                <tr>
-                  <th>必須項目</th>
-                  <td>
-                    <input
-                      type="text"
-                      name="required_field"
-                      required
-                      placeholder="必須項目"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th>任意項目</th>
-                  <td>
-                    <input
-                      type="text"
-                      name="optional_field"
-                      placeholder="任意項目"
-                    />
-                  </td>
-                </tr>
-
-                <tr>
-                  <th>電入情報の有無</th>
-                  <td>
-                    <label
-                      ><input type="radio" name="electric_info" value="yes" />
-                      有</label
-                    >
-                    <label
-                      ><input type="radio" name="electric_info" value="no" />
-                      無</label
-                    >
-                  </td>
-                </tr>
-              </table>
-            </form>
-          </section>
-          <div
-            class="text-center"
-            style="
-              margin: 20px 0 20px 0;
-              display: flex;
-              justify-content: space-between;
-            "
-          >
-            <a href="step1.html" class="btn" style="text-decoration: none"
-              >戻る</a
-            >
-            <a class="btn" style="text-decoration: none">一時保存 </a>
-            <a href="step3.html" class="btn" style="text-decoration: none"
-              >次へ</a
-            >
-          </div>
-        </div>
-      </main>
+      <div class="align-center" style="margin-top: 20px; margin-bottom: 40px">
+        <button type="submit" class="btn">設定を保存</button>
+      </div>
     </div>
   </body>
 </html>
