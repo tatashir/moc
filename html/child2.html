@@ -90,6 +90,10 @@
       .row .small {
         width: 80px;
       }
+      .percent-input {
+        width: 50px !important;
+        text-align: right;
+      }
       .date-group {
         display: flex;
         align-items: center;
@@ -241,11 +245,18 @@
 
           <div class="row">
             <span class="label">受注形態</span>
-            <select>
-              <option>単体</option>
-              <!-- 他 -->
-            </select>
-            <button style="margin-left: 8px">出資比率</button>
+            <input
+              type="number"
+              class="small percent-input"
+              min="0"
+              max="100"
+              placeholder="%"
+              style="width: 50px"
+            />
+          </div>
+
+          <div class="row">
+            <span class="label">出資比率</span>
             <input type="text" class="small" placeholder="%" />
           </div>
 
