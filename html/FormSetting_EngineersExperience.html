@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>参加申請様式の設定</title>
+    <link rel="stylesheet" href="../styles/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="../styles/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../styles/upsystem.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .settings-table,
+      .preview-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 40px;
+      }
+      .settings-table th,
+      .settings-table td,
+      .preview-table th,
+      .preview-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      .section-title {
+        font-size: 1.2em;
+        margin: 20px 0 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="logo vertical-center">
+            <h1>技術資料等アップロードシステム</h1>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+          <input class="btn" type="button" value="閉じる" />
+        </div>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="container" layout:fragment="contents">
+      <div class="screen-title mb-4">
+        <div class="row">
+          <div class="col-12 align-center">
+            <h2>参加申請様式の設定</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-area mb-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="table">
+              <tr>
+                <th>調達案件番号</th>
+                <td>00000000</td>
+              </tr>
+              <tr>
+                <th>調達案件名称</th>
+                <td>A案件</td>
+              </tr>
+              <tr>
+                <th>事務所</th>
+                <td>総務部契約課</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">表示設定：配置予定技術者の工事実績</div>
+      <table class="form-table" style="padding-left: 20px; padding-right: 20px">
+        <colgroup>
+          <col style="width: 8%" />
+          <col style="width: 92%" />
+        </colgroup>
+        <tr>
+          <th style="text-align: center">表示</th>
+          <th style="text-align: center">項目名</th>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>同種工事の条件</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工事名</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>発注機関区分</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>発注機関名</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>発注者</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工事場所</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工期</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>請負金額</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工事概要</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>施工形態</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>単独</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>共同企業体</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>構成員</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><input type="checkbox" /></td>
+          <td>工事コード</td>
+        </tr>
+      </table>
+
+      <div class="section-title">添付ファイルの設定</div>
+      <div class="align-center mb-3">
+        <label style="margin-right: 20px">
+          <input
+            type="radio"
+            name="file_requirement"
+            value="required"
+            checked
+          />
+          この様式で添付ファイルを要求する
+        </label>
+        <label>
+          <input type="radio" name="file_requirement" value="not_required" />
+          この様式で添付ファイルを要求しない
+        </label>
+      </div>
+      <table class="form-table" style="padding-left: 20px; padding-right: 20px">
+        <thead>
+          <tr>
+            <th style="width: 8%; text-align: left"></th>
+            <th style="width: 80%; text-align: left">ファイル名</th>
+            <th style="width: 12%; text-align: center">
+              <!-- <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  font-size: 18px;
+                  /* background: #f0f0f0; */
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="行を追加"
+              >
+                提出ファイルを追加
+              </button> -->
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center">1</td>
+            <td>証明書.pdf</td>
+            <td style="text-align: center">
+              <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  font-size: 16px;
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="この行を削除"
+              >
+                削除
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">2</td>
+            <td>設計図.dwg</td>
+            <td style="text-align: center">
+              <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  font-size: 16px;
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="この行を削除"
+              >
+                削除
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">3</td>
+            <td>
+              <input
+                type="text"
+                name="file_name_3"
+                placeholder="例：参考資料.xlsx"
+                style="width: 100%"
+              />
+            </td>
+            <td style="text-align: center">
+              <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  font-size: 16px;
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="この行を削除"
+              >
+                削除
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="text-align: center">
+              <button
+                type="button"
+                style="
+                  padding: 2px 10px;
+                  background: #e0f3ff;
+                  border: 1px solid #aaa;
+                  cursor: pointer;
+                "
+                title="行を追加"
+              >
+                追加
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="align-center" style="margin-top: 20px; margin-bottom: 40px">
+        <button type="submit" class="btn">設定を保存</button>
+      </div>
+    </div>
+  </body>
+</html>
