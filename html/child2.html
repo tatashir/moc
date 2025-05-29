@@ -5,10 +5,8 @@
     <title>技術資料入力システム　同種(及び類似)工事の施工実績</title>
     <style>
       body {
-        /* font-family: "MS UI Gothic", sans-serif; */
         background-color: #f0f0f0;
         margin: 0;
-        /* padding: 20px; */
         color: #333;
       }
       .container {
@@ -25,7 +23,6 @@
         font-size: 16px;
         text-align: center;
       }
-      /* === タブ === */
       .tabs {
         display: flex;
         border-bottom: 2px solid #0033cc;
@@ -44,7 +41,6 @@
         background: #fff;
         border: 2px solid #0033cc;
         border-bottom: none;
-        /* border-radius: 4px 4px 0 0; */
       }
       .tab-content > .section {
         display: none;
@@ -56,7 +52,6 @@
         background: #ffffcc;
         border: 1px solid #aaa;
         padding: 10px;
-        /* border-radius: 0 4px 4px 4px; */
       }
       .row {
         display: flex;
@@ -67,10 +62,7 @@
         flex-shrink: 0;
         width: 180px;
         padding: 6px;
-        background: #e0e0e0;
-        border: 1px solid #aaa;
-        /* border-radius: 4px; */
-        text-align: left;
+        text-align: right;
         font-size: 14px;
         line-height: 1.2;
       }
@@ -82,17 +74,12 @@
         font-family: inherit;
         font-size: 13px;
         border: 1px solid #aaa;
-        /* border-radius: 4px; */
       }
       .row textarea {
         resize: vertical;
       }
       .row .small {
         width: 80px;
-      }
-      .percent-input {
-        width: 50px !important;
-        text-align: right;
       }
       .date-group {
         display: flex;
@@ -133,13 +120,15 @@
         margin-top: 4px;
         color: #555;
       }
+      .percent-input {
+        width: 50px !important;
+        text-align: right;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>技術資料入力システム　同種(及び類似)工事の施工実績</h1>
-
-      <!-- タブ -->
       <ul class="tabs">
         <li class="active" data-tab="tab1">施工実績1</li>
         <li data-tab="tab2">施工実績2</li>
@@ -147,12 +136,8 @@
         <li data-tab="tab4">施工実績4</li>
         <li data-tab="tab5">施工実績5</li>
       </ul>
-
-      <!-- タブコンテンツ -->
       <div class="tab-content">
-        <!-- ===== 施工実績1 ===== -->
         <div id="tab1" class="section active">
-          <!-- 同種工事の条件 -->
           <div class="row">
             <span class="label">同種工事の条件</span>
             <textarea
@@ -161,7 +146,6 @@
             ></textarea>
           </div>
 
-          <!-- (参考)コリンズ記載外 -->
           <div class="row">
             <span class="label"
               >(参考)コリンズに記載されていない同種工事の項目数量等の記載</span
@@ -169,7 +153,6 @@
             <textarea rows="3" placeholder="△△△　×××"></textarea>
           </div>
 
-          <!-- 以下、各フィールド -->
           <div class="row">
             <span class="label">工事名</span>
             <input type="text" value="○○○○○○○○工事" />
@@ -180,7 +163,7 @@
             <button type="button">選択</button>
             <input
               type="text"
-              placeholder="中国整備局 ○○○○○○事務所"
+              placeholder="XX整備局 ○○○○○○事務所"
               style="margin-left: 8px"
             />
           </div>
@@ -190,7 +173,6 @@
             <div class="date-group">
               <select>
                 <option>平成</option>
-                <!-- 他 -->
               </select>
               <input type="text" class="small" value="20" /> 年度
             </div>
@@ -220,12 +202,10 @@
               <input type="text" class="small" value="26" /> 年
               <select>
                 <option>12</option>
-                <!-- 月 -->
               </select>
               月
               <select>
                 <option>1</option>
-                <!-- 日 -->
               </select>
               日 ～
               <select>
@@ -245,19 +225,19 @@
 
           <div class="row">
             <span class="label">受注形態</span>
-            <input
-              type="number"
-              class="small percent-input"
-              min="0"
-              max="100"
-              placeholder="%"
-              style="width: 50px"
-            />
+            <select>
+              <option>単体</option>
+            </select>
           </div>
 
-          <div class="row">
+          <div class="row" style="width: 50px">
             <span class="label">出資比率</span>
-            <input type="text" class="small" placeholder="%" />
+            <input
+              type="text"
+              class="percent-input"
+              style="margin-right: 4px"
+            />
+            %
           </div>
 
           <div class="row">
@@ -269,7 +249,6 @@
             <span class="label">CORINS登録の有無</span>
             <select>
               <option>有り</option>
-              <!-- 他 -->
             </select>
             <span style="margin: 0 8px">CORINS登録番号</span>
             <input type="text" class="small" placeholder="000000" /> -
@@ -282,42 +261,170 @@
             <span class="label">コメント</span>
             <textarea rows="2"></textarea>
           </div>
-
-          <!-- 右上：複写・初期化ボタン -->
+          <div style="margin-top: 20px">添付ファイルの登録</div>
+          <table
+            style="
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 8px;
+              font-size: 13px;
+            "
+          >
+            <thead>
+              <tr style="background: #e0e0e0">
+                <th
+                  style="
+                    border: 1px solid #aaa;
+                    padding: 6px;
+                    width: 8%;
+                    text-align: center;
+                  "
+                >
+                  番号
+                </th>
+                <th style="border: 1px solid #aaa; padding: 6px; width: 20%">
+                  ファイル名
+                </th>
+                <th style="border: 1px solid #aaa; padding: 6px; width: 52%">
+                  状態
+                </th>
+                <th
+                  style="
+                    border: 1px solid #aaa;
+                    padding: 6px;
+                    width: 8%;
+                    text-align: center;
+                  "
+                >
+                  削除
+                </th>
+              </tr>
+            </thead>
+            <tbody style="background-color: #fff">
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">1</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルA</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  example_A.pdf
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">2</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルB</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  example_B.pdf
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">3</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルC</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  example_C.pdf
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">4</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルD</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  example_D.pdf
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">5</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルE</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  example_E.pdf
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">6</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルF</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>ファイルを登録する</button>
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button disabled>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">7</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルG</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>ファイルを登録する</button>
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button disabled>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">8</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルH</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>ファイルを登録する</button>
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button disabled>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">9</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルI</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>ファイルを登録する</button>
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button disabled>削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #aaa; padding: 6px">10</td>
+                <td style="border: 1px solid #aaa; padding: 6px">ファイルJ</td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button>ファイルを登録する</button>
+                </td>
+                <td style="border: 1px solid #aaa; padding: 6px">
+                  <button disabled>削除</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <div class="right-buttons">
             <button type="button">既に入力された実績からの複写</button>
             <button type="button">入力画面の初期化</button>
           </div>
-
-          <!-- 下部アクション -->
-          <!-- <div class="bottom">
-            <button type="button">印刷イメージの確認</button>
-          </div> -->
         </div>
-
-        <!-- ===== 施工実績2～5 は同じ構造を繰り返し ===== -->
         <div id="tab2" class="section">…</div>
         <div id="tab3" class="section">…</div>
         <div id="tab4" class="section">…</div>
         <div id="tab5" class="section">…</div>
       </div>
-
       <div class="bottom">
         <button type="button" onclick="alert('登録しました')">登録</button>
         <button onclick="window.close()">メニューに戻る</button>
       </div>
     </div>
-
     <script>
-      // タブ切替
       document.querySelectorAll(".tabs li").forEach((tab) => {
         tab.addEventListener("click", () => {
-          // タブボタン
           document
             .querySelectorAll(".tabs li")
             .forEach((t) => t.classList.remove("active"));
           tab.classList.add("active");
-          // コンテンツ
           const tgt = tab.getAttribute("data-tab");
           document.querySelectorAll(".tab-content .section").forEach((sec) => {
             sec.id === tgt
